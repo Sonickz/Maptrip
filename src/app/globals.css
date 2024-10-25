@@ -2,26 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Creacion de fuente a partir de archivo .ttf */
+@font-face {
+  src: url('../../public/fonts/DoubleBass.ttf') format('truetype');
+  font-family: 'DoubleBass';
+  font-style: normal;
+  font-weight: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-color-100: #f7edfa;
+  --primary-color-200: #eedaf4;
+  --primary-color-300: #e3bdea;
+  --primary-color-400: #d295dd;
+  --primary-color-500: #bc6bca;
+  --primary-color-600: #a24caf;
+  --primary-color-700: #863c8f;
+  --primary-color-800: #6f3375;
+  --primary-color-900: #5d2e61;
+  --primary-color-950: #3b143e;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+main>* {
+  width: 100%;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.loader {
+  width: 60px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side, var(--primary-color-600) 90%, #0000);
+  background:
+    var(--_g) 0% 50%,
+    var(--_g) 50% 50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+
+@keyframes l3 {
+  20% {
+    background-position: 0% 0%, 50% 50%, 100% 50%
+  }
+
+  40% {
+    background-position: 0% 100%, 50% 0%, 100% 50%
+  }
+
+  60% {
+    background-position: 0% 50%, 50% 100%, 100% 0%
+  }
+
+  80% {
+    background-position: 0% 50%, 50% 50%, 100% 100%
+  }
+}
+
+
+/* Generals */
+
+.map-svg path:hover {
+  fill: #a24caf !important;
+  cursor: pointer
+}
+
+.map-svg path#path72269:hover {
+  fill: #ff9529 !important
+}
+
+.map-svg .active{
+  fill: var(--primary-color-800) !important;
+}
+
+.btn {
+  @apply p-3 font-bold text-white no-underline border-none rounded-md cursor-pointer bg-primary;
+}
+
+.btn:hover {
+  @apply bg-primary-hover
+}
+
+.font-secondary {
+  font-family: 'DoubleBass';
+}
+
+
+/* Navbar */
+
+.navbar__title {
+  font-family: 'DoubleBass';
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  @apply bg-primary-400 rounded-md font-bold cursor-pointer
+}
+
+.navbar__user:hover~.navbar__login {
+  padding: 5px 1rem;
+  padding-left: 2.5rem;
+  width: 6rem;
+}
+
+.navbar__login:hover {
+  padding: 5px 1rem;
+  padding-left: 2.5rem;
+  width: 6rem;
+  font-weight: bold;
+}
+
+
+/* Home Page */
+
+.home__title {
+  text-shadow: 8px 8px 0px var(--primary-color-300);
+  font-family: 'DoubleBass';
+}
+
+.home__subtitle {
+  text-shadow: 3px 3px 0px var(--primary-color-300);
+  font-family: 'DoubleBass';
+}
+
+.home__btn {
+  font-family: 'DoubleBass';
+}
+
+/* Map */
+.map-modal__content{
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color-400);
 }

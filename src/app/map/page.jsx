@@ -12,7 +12,6 @@ async function getCitys() {
 
 export default async function MapPage() {
     const citysData = await getCitys();
-
     return (
         <Map citysData={citysData} />
     );

@@ -29,7 +29,7 @@ export default function HomePage() {
         <div className="flex flex-col items-center translate-y-[-15%] -rotate-2">
           <h1 className="home__title text-primary-700 text-[6.5vw] font-bold text-nowrap h-28">Viajando con Maptrip</h1>
           <p className="text-xl font-bold capitalize home__subtitle w-fit text-primary-700">¡CONOCE Y DISFRUTA DEL CAUCA DE FORMA INTERACTIVA!</p>
-          <Link href="/map" className="my-6 text-xl transition-all duration-300 home__btn btn hover:font-bold hover:bg-primary-hover hover:scale-110">Ver Mapa</Link>
+          <Link href="/map" className="px-6 py-3 my-6 text-xl transition-all duration-300 font-secondary btn hover:scale-110">Ver Mapa</Link>
         </div>
       </section>
     </article>

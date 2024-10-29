@@ -4,17 +4,41 @@ import Image from 'next/image';
 import Loading from '@/app/loading';
 import MapSvg from '@/components/svg/map.svg'
 import CloseIcon from '@/components/svg/icons/close.svg';
+import DownArrowIcon from '@/components/svg/icons/down-arrow.svg'
 
 export default function Map({ citysData }) {
     const [loading, setLoading] = useState(true);
     const mapRef = useRef(null);
-    const [modal, setModal] = useState(false)
+    const [modal, setModal] = useState(true)
     const [citysList, setCitysList] = useState(citysData);
     const [hoverCity, setHoverCity] = useState(null)
     const [actualCity, setActualCity] = useState(citysData[0])
     const [hiddenCityBox, setHiddenCityBox] = useState(false)
+    const [modalTransition, setModalTransition] = useState(false)
+    const modalContentRef = useRef(null)
 
 
+    //Effects
+
+    //Loading
+    useEffect(() => {
+        const loadingTimer = setTimeout(() => setLoading(false), 500)
+        return () => clearTimeout(loadingTimer)
+    }, [])
+
+    //Hide city box
+    const timerRef = useRef(null)
+    useEffect(() => {
+        setHiddenCityBox(false)
+        if (modal && !hoverCity) {
+            if (timerRef.current) clearTimeout(timerRef.current)
+            timerRef.current = setTimeout(() => setHiddenCityBox(true), 10000)
+        }
+        return () => clearTimeout(timerRef.current)
+    }, [hoverCity, modal])
+
+
+    //Functions
 
     const resetMap = () => {
         const map = mapRef.current
@@ -30,28 +54,14 @@ export default function Map({ citysData }) {
         resetMap()
     }
 
-    useEffect(() => {
-        setTimeout(() => {
-            setLoading(false)
-        }, 500)
-    }, [])
-
-    const [timer, setTimer] = useState(null)
-    useEffect(() => {
-        setHiddenCityBox(false)
-        if (modal && !hoverCity) {
-            if (timer) clearTimeout(timer)
-            setTimer(setTimeout(() => {
-                setHiddenCityBox(true)
-            }, 5000))
-        }
-    }, [hoverCity])
-
+    //Comprobate if the element is a city
     const isCity = (e) => {
         const cityCode = e.target.dataset.id
         return cityCode && !cityCode.includes('path') && cityCode.length === 5
     }
 
+
+    //Handlers
     const handleHover = (e) => {
         const cityCode = e.target.dataset.id
         if (isCity(e)) {
@@ -62,26 +72,42 @@ export default function Map({ citysData }) {
 
     const handleClick = (e) => {
         if (isCity(e)) {
+            setModalTransition(true)
             resetMap()
             const citySelected = e.target
             citySelected.classList.add("active")
-
-            setActualCity(hoverCity)
-            setModal(true)
+            setTimeout(() => {
+                modalContentRef.current ? modalContentRef.current.scrollTop = 0 : null
+                setActualCity(hoverCity)
+                setModal(true)
+            }, 400)
+            const time = modal ? 750 : 0
+            setTimeout(() => {
+                setModalTransition(false)
+            }, time)
         }
     }
 
+    const handleScroll = () => {
+        const modalContent = modalContentRef.current
+        if (modalContent) {
+            const arrow = modalContent.querySelector('.arrow')
+            modalContent.scrollTop >= 230 && arrow.classList.add('animate__fadeOutDown')
+            modalContent.scrollTop <= 30 && arrow.classList.remove('animate__fadeOutDown')
+        }
+    }
+
+    if (loading) return <Loading />
     return (
         // Map
-        <article className={`flex flex-row items-center px-8 gap-20 overflow-hidden justify-center`}>
-            {loading && (<Loading />)}
-            <article className={`${loading ? 'hidden' : modal ? 'ml-0' : 'ml-[11%]'} flex lg:w-[35%] sm:w-[90%] 
+        <article className={`flex flex-row items-center gap-20 overflow-hidden justify-center`}>
+            <article className={`${modal ? 'ml-0 lg:w-[85%]' : 'ml-[10%] lg:w-[45%]'} flex sm:w-[90%] 
             flex-col items-center justify-center gap-6 transition-all duration-700 ease-in-out`}>
-                <h1 className={`w-[55%] px-2 py-3 text-xl text-center text-white rounded-md bg-primary-700 font-secondary
-                    transition-all duration-500 ease-in-out ${hiddenCityBox ? 'opacity-0' : ''}`}>
+                <h1 className={`w-[50%] h-14 flex items-center justify-center text-xl text-white rounded-md bg-primary-700 font-secondary
+                    transition-all duration-1000 ease-in-out animate__animated ${hiddenCityBox && 'animate__fadeOut !h-0'}`}>
                     {hoverCity ? hoverCity.name : modal && actualCity && !hoverCity ? actualCity.name : 'Elige un municipio'}
                 </h1>
-                <section className={`map w-full ${modal ? 'ml-0' : ''}`}
+                <section className="w-full map"
                     onMouseOver={(e) => handleHover(e)}
                     onMouseOut={() => setHoverCity(null)}
                     onClick={(e) => handleClick(e)}>
@@ -90,18 +116,28 @@ export default function Map({ citysData }) {
             </article>
 
             {/* Modal */}
-            {loading || (<article className={`flex flex-col max-h-[70vh] overflow-hidden  
-            bg-white rounded-lg border-2 border-primary-border transition-all duration-700 
-            ease-in-out gap-12 map-modal ${modal ? 'translate-x-0 w-[50%] p-6' : 'translate-x-[100vw] w-0'}`}>
-                <header className='flex flex-row items-center justify-between w-full h-fit'>
-                    <Image src={`/img/flags/${actualCity.code}.jpg`} alt="Flag image" width={100} height={100}
-                        className='w-24 border-2 border-primary' />
-                    <h1 className='text-3xl me-10 text-primary-title font-secondary'>{actualCity.name}</h1>
-                    <button className='w-10 text-lg transition-none text-primary-500 hover:text-primary-700' onClick={closeModal}>
-                        <CloseIcon className="w-full h-full" />
-                    </button>
+            <article className={`flex flex-col max-h-[85vh] overflow-hidden  
+            bg-white rounded-lg border-2 border-primary-border transition-all duration-500 
+            ease-in-out gap-14 map-modal ${modal ? 'translate-x-0 w-full px-10 pt-20 pb-6' : 'translate-x-[100vw] w-0'}
+            ${modalTransition && 'opacity-0'}`}>
+                <button className='absolute w-10 text-lg transition-none -right-1 -top-1 text-primary-500 hover:text-primary-700' onClick={closeModal} title="Cerrar modal">
+                    <CloseIcon className="w-full h-full" />
+                </button>
+                <header className='relative flex flex-row items-center justify-center w-full h-fit'>
+                    <Image src={`/img/flags/${actualCity.code}.jpg`} alt="Flag image" title={`Bandera de ${actualCity.name}`} width={1000} height={1000}
+                        className='absolute left-0 w-24 border-2 border-primary' />
+                    <h1 className='text-3xl text-primary-title font-secondary'>{actualCity.name}</h1>
+                    <Image src={`/img/shields/${actualCity.code}.jpg`} alt="Shield image" title={`Escudo de ${actualCity.name}`} width={1000} height={1000}
+                        className='absolute right-0 w-20' />
                 </header>
-                <section className='flex flex-col gap-8 px-6 overflow-y-auto text-justify map-modal__content'>
+                <section className='flex flex-col items-center gap-4 px-6 overflow-y-auto text-justify map-modal__content' ref={modalContentRef} onScroll={handleScroll}>
+                    <section className='flex flex-col items-center w-full gap-1'>
+                        <Image src={`/img/citys/${actualCity.code}.jpg`} alt="City image" title={`Municipio de ${actualCity.name}`} width={2000} height={2000}
+                            className='w-full rounded-3xl max-h-[16.6rem]' />
+                        <div title='¡Desplazate hacia abajo!'>
+                            <DownArrowIcon className='z-10 h-14 w-14 text-primary-700 arrow animate__animated' />
+                        </div>
+                    </section>
                     <section className='flex flex-col items-center gap-2'>
                         <h1 className='text-lg font-bold text-primary-subtitle'>Descripción</h1>
                         <p>{actualCity.description}</p>
@@ -112,7 +148,6 @@ export default function Map({ citysData }) {
                     </section>
                 </section>
             </article>
-            )}
         </article >
     );
 }

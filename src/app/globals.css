@@ -73,30 +73,71 @@ main>* {
 
 /* Generals */
 
-.map-svg path:hover {
-  fill: #a24caf !important;
-  cursor: pointer
-}
-
-.map-svg path#path72269:hover {
-  fill: #ff9529 !important
-}
-
-.map-svg .active{
-  fill: var(--primary-color-800) !important;
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color-300) white;
 }
 
 .btn {
-  @apply p-3 font-bold text-white no-underline border-none rounded-md cursor-pointer bg-primary;
-}
-
-.btn:hover {
-  @apply bg-primary-hover
+  @apply font-bold text-white no-underline transition-all duration-500 border-none rounded-full cursor-pointer bg-primary hover:font-bold hover:bg-primary-hover;
 }
 
 .font-secondary {
   font-family: 'DoubleBass';
 }
+
+.card {
+  @apply flex flex-row items-center px-10 py-10 overflow-hidden transition-all duration-500 ease-in-out bg-white shadow h-fit rounded-3xl;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+/*Form*/
+
+form {
+  @apply flex flex-col gap-8 overflow-hidden transition-all duration-700 ease-in-out;
+}
+
+.form__title {
+  @apply text-4xl font-bold text-center text-primary-title;
+}
+
+.form__inputs {
+  @apply flex flex-col gap-6 px-1 py-2 overflow-y-auto scrollbar;
+}
+
+.form__alert {
+  @apply mx-2 mt-2 text-red-500;
+}
+
+.form__input-box {
+  @apply flex flex-row items-center rounded-[20px] border-2 border-primary-border py-3 px-5 relative;
+
+  label {
+    @apply absolute transition-all duration-300 ease-in-out;
+  }
+
+  input {
+    @apply z-10 w-full text-lg bg-transparent border-none focus-visible:outline-none;
+  }
+
+  input:focus~label,
+  input:not(:placeholder-shown)~label {
+    @apply -top-[10px] text-sm text-primary-600 bg-white;
+  }
+}
+
+.form__footer {
+  @apply flex flex-col items-center gap-4
+}
+
+.form__submit {
+  @apply w-full py-2 text-lg btn
+}
+
+.form__leyend {
+  @apply cursor-pointer hover:underline text-primary-subtitle hover:font-bold
+}
+
 
 
 /* Navbar */
@@ -110,19 +151,15 @@ main>* {
   @apply bg-primary-400 rounded-md font-bold cursor-pointer
 }
 
-.navbar__user:hover~.navbar__login {
+.navbar__user-icon:hover~.navbar__user-login, .navbar__user-login:hover, .navbar__user--active .navbar__user-login {
   padding: 5px 1rem;
   padding-left: 2.5rem;
   width: 6rem;
 }
 
-.navbar__login:hover {
-  padding: 5px 1rem;
-  padding-left: 2.5rem;
-  width: 6rem;
+.navbar__user-login:hover {
   font-weight: bold;
 }
-
 
 /* Home Page */
 
@@ -141,7 +178,47 @@ main>* {
 }
 
 /* Map */
-.map-modal__content{
+.map-modal__content {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color-400);
 }
+
+.map-svg path:hover {
+  fill: #a24caf !important;
+  cursor: pointer
+}
+
+.map-svg path#path72269:hover {
+  fill: #ff9529 !important
+}
+
+.map-svg .active {
+  fill: var(--primary-color-800) !important;
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.arrow {
+  animation: arrowAnimation 1s infinite;
+}
+
+.arrow.animate__fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+  animation-iteration-count: 1;
+  opacity: 0;
+}
+
+/* Login */

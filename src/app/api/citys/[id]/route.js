@@ -1,16 +1,16 @@
 import { NextResponse } from "next/server";
 
-export default function GET(){
+export function GET(){
 
     return NextResponse.json("Get Users")
 }
 
-export default function PUT(){
+export function PUT(){
 
     return NextResponse.json("Post Users")
 }
 
-export default function DELETE(){
+export function DELETE(){
 
     return NextResponse.json("Post Users")
 }

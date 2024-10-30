@@ -2,11 +2,14 @@
 import { useState } from "react"
 import { Formik, ErrorMessage, Field, Form } from "formik"
 import { zodValidate } from '@/libs/libs'
-import z from "zod"
+import { registerUser } from '@/app/api/config/routes'
+import { loginValidationSchema, registerValidationSchema } from '@/app/api/schemas/users.schema'
+import { FormAlert } from '@/components/FormAlert'
 
 
 export default function AuthForms() {
     const [loginForm, setLoginForm] = useState(true)
+    const [registerAlerts, setRegisterAlerts] = useState(null)
 
     const loginFields = [
         {
@@ -21,21 +24,16 @@ export default function AuthForms() {
         }
     ]
 
-    const loginValidationSchema = z.object({
-        email: z
-            .string({ required_error: 'El correo electronico es requerido' })
-            .email({ message: 'Ingrese un correo electronico valido' }),
-        password: z
-            .string({ required_error: 'La contraseña es requerida' })
-            .min(8, { message: 'La contraseña debe tener al menos 8 caracteres' })
-    })
-
-
     const registerFields = [
         {
-            field: 'name',
+            field: 'names',
             type: 'text',
-            label: 'Nombre'
+            label: 'Nombres'
+        },
+        {
+            field: 'username',
+            type: 'text',
+            label: 'Nombre de usuario'
         },
         {
             field: 'email',
@@ -54,26 +52,19 @@ export default function AuthForms() {
         }
     ]
 
-    const registerValidationSchema = z.object({
-        name: z
-            .string({ required_error: 'El nombre es requerido' })
-            .min(3, { message: 'El nombre debe tener al menos 3 caracteres' }),
-        email: z
-            .string({ required_error: 'El correo electronico es requerido' })
-            .email({ message: 'Ingrese un correo electronico valido' }),
-        password: z
-            .string({ required_error: 'La contraseña es requerida' })
-            .min(8, { message: 'La contraseña debe tener al menos 8 caracteres' }),
-        confirmPassword: z
-            .string({ required_error: 'La confirmacion de la contraseña es requerida' })
-    }).refine(data => data.password === data.confirmPassword, {
-        message: "Las contraseñas no coinciden",
-        path: ["confirmPassword"]
-    })
-
     const loginSubmit = (values, { resetForm }) => {
         alert(JSON.stringify(values))
         resetForm()
+    }
+
+    const registerSubmit = async (values, { resetForm }) => {
+        try {
+            const res = await registerUser(values)
+            setRegisterAlerts({ status: res.status, data: res.data })
+            resetForm()
+        } catch (error) {
+            setRegisterAlerts({ status: error.response.status, data: error.response.data.message })
+        }
     }
 
     const switchForm = (resetForm) => {
@@ -115,15 +106,16 @@ export default function AuthForms() {
             </Formik>
             <Formik
                 initialValues={registerFields.reduce((acc, field) => {
-                    acc[field.field] = '';
-                    return acc;
+                    acc[field.field] = ''
+                    return acc
                 }, {})}
-                onSubmit={loginSubmit}
+                onSubmit={registerSubmit}
                 validate={zodValidate(registerValidationSchema)}>
                 {({ handleReset }) => (
                     <Form className={loginForm ? 'w-0 -translate-x-[100vw] text-nowrap' : 'w-full'}>
                         <h1 className="form__title">Crear cuenta</h1>
                         <section className="form__inputs">
+                            <FormAlert alert={registerAlerts} />
                             {registerFields.map((field, index) => {
                                 return (
                                     <section key={index}>

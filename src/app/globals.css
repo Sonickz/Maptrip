@@ -72,6 +72,9 @@ main>* {
 
 
 /* Generals */
+.main {
+  @apply px-14;
+}
 
 .scrollbar {
   scrollbar-width: thin;
@@ -175,6 +178,10 @@ form {
 
 .home__btn {
   font-family: 'DoubleBass';
+}
+
+.circle {
+  clip-path: polygon(0 0, 85% 0, 85% 50%, 85% 100%, 0 100%);
 }
 
 /* Map */

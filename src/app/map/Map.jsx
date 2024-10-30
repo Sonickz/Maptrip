@@ -9,7 +9,7 @@ import DownArrowIcon from '@/components/svg/icons/down-arrow.svg'
 export default function Map({ citysData }) {
     const [loading, setLoading] = useState(true);
     const mapRef = useRef(null);
-    const [modal, setModal] = useState(true)
+    const [modal, setModal] = useState(false)
     const [citysList, setCitysList] = useState(citysData);
     const [hoverCity, setHoverCity] = useState(null)
     const [actualCity, setActualCity] = useState(citysData[0])
@@ -100,9 +100,9 @@ export default function Map({ citysData }) {
     if (loading) return <Loading />
     return (
         // Map
-        <article className={`flex flex-row items-center gap-20 overflow-hidden justify-center`}>
+        <article className={`main flex flex-row items-center gap-20 overflow-hidden justify-center`}>
             <article className={`${modal ? 'ml-0 lg:w-[85%]' : 'ml-[10%] lg:w-[45%]'} flex sm:w-[90%] 
-            flex-col items-center justify-center gap-6 transition-all duration-700 ease-in-out`}>
+            flex-col items-center justify-center gap-6 transition-all duration-1000 ease-in-out`}>
                 <h1 className={`w-[50%] h-14 flex items-center justify-center text-xl text-white rounded-md bg-primary-700 font-secondary
                     transition-all duration-1000 ease-in-out animate__animated ${hiddenCityBox && 'animate__fadeOut !h-0'}`}>
                     {hoverCity ? hoverCity.name : modal && actualCity && !hoverCity ? actualCity.name : 'Elige un municipio'}

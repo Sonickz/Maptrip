@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body className={`${nunito.className}`}>
       <Navbar />
-      <main className="flex flex-col items-center py-16 px-14">
+      <main className="flex flex-col items-center py-16 overflow-x-hidden">
         {children}
       </main>
       </body>

@@ -8,7 +8,7 @@ export const metadata = {
 export default function AuthPage() {
 
     return (
-        <article className="flex flex-col items-center justify-center gap-4">
+        <article className="flex flex-col items-center justify-center gap-4 main">
             <AuthForms />
         </article>
     );

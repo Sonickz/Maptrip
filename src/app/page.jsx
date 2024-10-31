@@ -1,11 +1,10 @@
-import Link from "next/link";
-import Image from "next/image";
-import MapSvg from '@/components/svg/map.svg';
+import Link from 'next/link';
+import Image from 'next/image';
+import { MapSvg } from '@/components/svg/SvgComponents'
 
 export default function HomePage() {
   return (
     <article className="relative flex flex-col justify-end !px-0 main">
-
       {/* View 1 */}
       <article className="view-1 flex flex-row justify-end overflow h-[88vh] ">
         {/* Map */}
@@ -41,7 +40,7 @@ export default function HomePage() {
             </div>
           </section>
           {/* Side Text */}
-          <section className='flex flex-col gap-2 absolute px-10 text-white bg-primary-500 rounded-full -right-[10vw] top-[48vh] py-10 circle'>
+          <section className="flex flex-col gap-2 absolute px-10 text-white bg-primary-500 rounded-full -right-[10vw] top-[48vh] py-10 circle">
             <h1 className="w-[70%] text-xl font-bold uppercase">Elige tu proximo destino con nosotros!</h1>
             <Link href="/" className="font-bold uppercase text-md">www.maptrip.com</Link>
           </section>
@@ -57,7 +56,6 @@ export default function HomePage() {
           <p className="text-xl tracking-widest">Nos encargamos de todo para que tu solo tengas que disfrutar...</p>
         </section>
       </article>
-
     </article>
   );
 }

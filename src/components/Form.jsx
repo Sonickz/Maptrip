@@ -1,8 +1,8 @@
 'use client'
-import { Formik, Form, Field, ErrorMessage } from "formik"
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { zodValidate } from '@/libs/libs'
 
-export default function FormComponent({ fields, schemaValidate, onSubmit, title, buttonText, leyend, className }) {    
+const FormComponent = ({ fields, schemaValidate, onSubmit, title, buttonText, leyend, className }) => {
     if (!fields || !schemaValidate || !onSubmit) return;
 
     const initialValues = fields.reduce((acc, field) => {
@@ -15,7 +15,7 @@ export default function FormComponent({ fields, schemaValidate, onSubmit, title,
             initialValues={initialValues}
             validate={zodValidate(schemaValidate)}
             onSubmit={onSubmit}>
-            {({ handleReset }) => (                
+            {({ handleReset }) => (
                 <Form className={className && className}>
                     <h1 className="form__title">{title}</h1>
                     <section className="form__inputs">
@@ -32,10 +32,12 @@ export default function FormComponent({ fields, schemaValidate, onSubmit, title,
                         })}
                     </section>
                     <footer className="form__footer">
-                        <button type="submit" className="form__submit">{buttonText ? buttonText : title}</button>                        
+                        <button type="submit" className="form__submit">{buttonText ? buttonText : title}</button>
                     </footer>
                 </Form>
             )}
         </Formik>
     );
 }
+
+export default FormComponent;

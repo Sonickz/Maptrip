@@ -1,10 +1,8 @@
 'use client'
-import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Loading from '@/app/loading';
-import MapSvg from '@/components/svg/map.svg'
-import CloseIcon from '@/components/svg/icons/close.svg';
-import DownArrowIcon from '@/components/svg/icons/down-arrow.svg'
+import { useEffect, useRef, useState } from 'react';
+import { MapSvg, CloseIcon, DownArrowIcon } from '@/components/svg/SvgComponents'
 
 export default function Map({ citysData }) {
     const [loading, setLoading] = useState(true);

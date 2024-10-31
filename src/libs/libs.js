@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server';
 
 export const zodValidate = (schema) => (values) => {
     const result = schema.safeParse(values)

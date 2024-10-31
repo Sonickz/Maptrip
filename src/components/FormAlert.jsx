@@ -1,16 +1,9 @@
-'use client'
-import { useEffect, useState } from 'react'
-
 export const FormAlert = ({ alert }) => {
-    const [alertType, setAlertType] = useState('success')
-
-    useEffect(() => {
-        alert && alert.status !== 200 ? setAlertType('error') : null
-    }, [alert])
+    const httpCodeErrors = [400, 401, 403, 404, 405, 500]
 
     return (
-        <section className='flex flex-col gap-2 alert'>
-            {alert && alertType === 'success' ? (
+        <section className="flex flex-col gap-2 alert">
+            {alert && !httpCodeErrors.includes(alert.status) ? (
                 <div className="p-4 mb-4 text-lg text-green-800 bg-green-100 rounded-lg" role="alert">
                     {alert.data.message}
                 </div>)
@@ -21,8 +14,8 @@ export const FormAlert = ({ alert }) => {
                                 {message}
                             </div>
                         )
-                    }))
-            }
+                    })
+                )}
         </section>
     )
 }

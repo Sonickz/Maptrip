@@ -7,7 +7,7 @@ export default prisma
 //   return new PrismaClient()
 // }
 
-// const globalForPrisma = globalThis;
+// const globalForPrisma = globalThis
 
 // const prisma = globalForPrisma.prisma ?? prismaClientSingleton()
 

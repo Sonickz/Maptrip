@@ -1,13 +1,13 @@
-import { Nunito } from 'next/font/google';
+import { Nunito } from 'next/font/google' 
 import { WEB_NAME } from '@/config/config'
-import Navbar from '@/components/layout/Navbar';
-import '@/styles/globals.css';
+import Navbar from '@/components/layout/Navbar' 
+import '@/styles/globals.css' 
 import 'animate.css'
 
 export const metadata = {
   title: WEB_NAME,
   description: `¡Bienvenido a ${WEB_NAME}!`,
-};
+} 
 
 const nunito = Nunito({
   style: ["normal", "italic"],
@@ -24,5 +24,5 @@ export default function RootLayout({ children }) {
         </main>
       </body>
     </html>
-  );
+  ) 
 }

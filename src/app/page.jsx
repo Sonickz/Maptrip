@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from 'next/link' 
+import Image from 'next/image' 
 import { MapSvg } from '@/components/svg/SvgComponents'
 
 export default function HomePage() {
@@ -57,5 +57,5 @@ export default function HomePage() {
         </section>
       </article>
     </article>
-  );
+  ) 
 }

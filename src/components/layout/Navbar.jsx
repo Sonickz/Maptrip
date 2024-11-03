@@ -1,14 +1,14 @@
 'use client'
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import { UserIcon } from '@/components/svg/SvgComponents';
-import { WEB_NAME } from '@/config/config';
+import { usePathname } from 'next/navigation' 
+import Link from 'next/link' 
+import { UserIcon } from '@/components/svg/SvgComponents' 
+import { WEB_NAME } from '@/config/config' 
 
 const Navbar = () => {
-    const pathname = usePathname();
+    const pathname = usePathname() 
 
     const isActive = (path) => {
-        return pathname === path;
+        return pathname === path 
     }
 
     const navbarRoutes = [
@@ -20,7 +20,7 @@ const Navbar = () => {
             name: 'Mapa',
             route: '/map'
         }
-    ];
+    ] 
 
     return (
         <nav className="navbar flex items-center py-6 px-16 pr-20 bg-primary text-white h-[64px]">
@@ -50,7 +50,7 @@ const Navbar = () => {
                 </Link>
             </section>
         </nav>
-    );
+    ) 
 }
 
-export default Navbar;
+export default Navbar 

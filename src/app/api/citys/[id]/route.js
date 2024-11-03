@@ -1,16 +1,16 @@
-import { NextResponse } from "next/server";
+import { NextResponse } from "next/server"
 
-export function GET(){
+export function GET() {
 
     return NextResponse.json("Get Users")
 }
 
-export function PUT(){
+export function PUT() {
 
     return NextResponse.json("Post Users")
 }
 
-export function DELETE(){
+export function DELETE() {
 
     return NextResponse.json("Post Users")
 }

@@ -1,22 +1,21 @@
 'use client'
-import Image from 'next/image';
-import Loading from '@/app/loading';
-import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image'
+import Loading from '@/app/loading'
+import { useEffect, useRef, useState } from 'react'
 import { MapSvg, CloseIcon, DownArrowIcon } from '@/components/svg/SvgComponents'
 
 export default function Map({ citysData }) {
-    const [loading, setLoading] = useState(true);
-    const mapRef = useRef(null);
-    const [modal, setModal] = useState(false)
-    const [citysList, setCitysList] = useState(citysData);
+    const [loading, setLoading] = useState(true)
     const [hoverCity, setHoverCity] = useState(null)
     const [actualCity, setActualCity] = useState(citysData[0])
     const [hiddenCityBox, setHiddenCityBox] = useState(false)
+    const [modal, setModal] = useState(false)
     const [modalTransition, setModalTransition] = useState(false)
+    const mapRef = useRef(null)
     const modalContentRef = useRef(null)
 
 
-    //Effects
+    //* Effects
 
     //Loading
     useEffect(() => {
@@ -36,7 +35,7 @@ export default function Map({ citysData }) {
     }, [hoverCity, modal])
 
 
-    //Functions
+    //* Functions
 
     const resetMap = () => {
         const map = mapRef.current
@@ -55,15 +54,16 @@ export default function Map({ citysData }) {
     //Comprobate if the element is a city
     const isCity = (e) => {
         const cityCode = e.target.dataset.id
-        return cityCode && !cityCode.includes('path') && cityCode.length === 5
+        return cityCode && !cityCode.includes("path") && cityCode.length === 5
     }
 
 
-    //Handlers
+    //* Handlers
+    
     const handleHover = (e) => {
         const cityCode = e.target.dataset.id
         if (isCity(e)) {
-            const findCity = citysList.find(city => city.code === cityCode)
+            const findCity = citysData.find(city => city.code === cityCode)
             setHoverCity(findCity)
         }
     }
@@ -89,16 +89,16 @@ export default function Map({ citysData }) {
     const handleScroll = () => {
         const modalContent = modalContentRef.current
         if (modalContent) {
-            const arrow = modalContent.querySelector('.arrow')
-            modalContent.scrollTop >= 230 && arrow.classList.add('animate__fadeOutDown')
-            modalContent.scrollTop <= 30 && arrow.classList.remove('animate__fadeOutDown')
+            const arrow = modalContent.querySelector(".arrow")
+            modalContent.scrollTop >= 230 && arrow.classList.add("animate__fadeOutDown")
+            modalContent.scrollTop <= 30 && arrow.classList.remove("animate__fadeOutDown")
         }
     }
 
     if (loading) return <Loading />
     return (
         // Map
-        <article className={`main flex flex-row items-center gap-20 overflow-hidden justify-center`}>
+        <article className="flex flex-row items-center justify-center gap-20 overflow-hidden main">
             <article className={`${modal ? 'ml-0 lg:w-[85%]' : 'ml-[10%] lg:w-[45%]'} flex sm:w-[90%] 
             flex-col items-center justify-center gap-6 transition-all duration-1000 ease-in-out`}>
                 <h1 className={`w-[50%] h-14 flex items-center justify-center text-xl text-white rounded-md bg-primary-700 font-secondary
@@ -118,34 +118,34 @@ export default function Map({ citysData }) {
             bg-white rounded-lg border-2 border-primary-border transition-all duration-500 
             ease-in-out gap-14 map-modal ${modal ? 'translate-x-0 w-full px-10 pt-20 pb-6' : 'translate-x-[100vw] w-0'}
             ${modalTransition && 'opacity-0'}`}>
-                <button className='absolute w-10 text-lg transition-none -right-1 -top-1 text-primary-500 hover:text-primary-700' onClick={closeModal} title="Cerrar modal">
+                <button className="absolute w-10 text-lg transition-none -right-1 -top-1 text-primary-500 hover:text-primary-700" onClick={closeModal} title="Cerrar modal">
                     <CloseIcon className="w-full h-full" />
                 </button>
-                <header className='relative flex flex-row items-center justify-center w-full h-fit'>
+                <header className="relative flex flex-row items-center justify-center w-full h-fit">
                     <Image src={`/img/flags/${actualCity.code}.jpg`} alt="Flag image" title={`Bandera de ${actualCity.name}`} width={1000} height={1000}
-                        className='absolute left-0 w-24 border-2 border-primary' />
-                    <h1 className='text-3xl text-primary-title font-secondary'>{actualCity.name}</h1>
+                        className="absolute left-0 w-24 border-2 border-primary" />
+                    <h1 className="text-3xl text-primary-title font-secondary">{actualCity.name}</h1>
                     <Image src={`/img/shields/${actualCity.code}.jpg`} alt="Shield image" title={`Escudo de ${actualCity.name}`} width={1000} height={1000}
-                        className='absolute right-0 w-20' />
+                        className="absolute right-0 w-20" />
                 </header>
-                <section className='flex flex-col items-center gap-4 px-6 overflow-y-auto text-justify map-modal__content' ref={modalContentRef} onScroll={handleScroll}>
-                    <section className='flex flex-col items-center w-full gap-1'>
+                <section className="flex flex-col items-center gap-4 px-6 overflow-y-auto text-justify map-modal__content" ref={modalContentRef} onScroll={handleScroll}>
+                    <section className="flex flex-col items-center w-full gap-1">
                         <Image src={`/img/citys/${actualCity.code}.jpg`} alt="City image" title={`Municipio de ${actualCity.name}`} width={2000} height={2000}
-                            className='w-full rounded-3xl max-h-[16.6rem]' />
-                        <div title='¡Desplazate hacia abajo!'>
-                            <DownArrowIcon className='z-10 h-14 w-14 text-primary-700 arrow animate__animated' />
+                            className="w-full rounded-3xl max-h-[16.6rem]" />
+                        <div title="¡Desplazate hacia abajo!">
+                            <DownArrowIcon className="z-10 h-14 w-14 text-primary-700 arrow animate__animated" />
                         </div>
                     </section>
-                    <section className='flex flex-col items-center gap-2'>
-                        <h1 className='text-lg font-bold text-primary-subtitle'>Descripción</h1>
+                    <section className="flex flex-col items-center gap-2">
+                        <h1 className="text-lg font-bold text-primary-subtitle">Descripción</h1>
                         <p>{actualCity.description}</p>
                     </section>
-                    <section className='flex flex-col items-center gap-2'>
-                        <h1 className='text-lg font-bold text-primary-subtitle'>Historia</h1>
+                    <section className="flex flex-col items-center gap-2">
+                        <h1 className="text-lg font-bold text-primary-subtitle">Historia</h1>
                         <p>{actualCity.history}</p>
                     </section>
                 </section>
             </article>
         </article >
-    );
+    )
 }

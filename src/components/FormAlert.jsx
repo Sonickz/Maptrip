@@ -1,14 +1,16 @@
-export const FormAlert = ({ alert }) => {
+const FormAlert = ({ alerts }) => {
+
+    const status = alerts && alerts.status ? alerts.status : null
     const httpCodeErrors = [400, 401, 403, 404, 405, 500]
 
     return (
         <section className="flex flex-col gap-2 alert">
-            {alert && !httpCodeErrors.includes(alert.status) ? (
+            {alerts && !httpCodeErrors.includes(status) ? (
                 <div className="p-4 mb-4 text-lg text-green-800 bg-green-100 rounded-lg" role="alert">
-                    {alert.data.message}
+                    {alerts.data.message}
                 </div>)
-                : alert && (
-                    alert.data.map((message, i) => {
+                : alerts && (
+                    alerts.response.data.message.map((message, i) => {
                         return (
                             <div key={i} className="p-4 mb-4 text-lg text-red-800 bg-red-100 rounded-lg" role="alert">
                                 {message}
@@ -19,3 +21,5 @@ export const FormAlert = ({ alert }) => {
         </section>
     )
 }
+
+export default FormAlert

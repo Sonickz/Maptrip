@@ -128,7 +128,7 @@ export default function Map({ citysData }) {
                     <Image src={`/img/shields/${actualCity.code}.jpg`} alt="Shield image" title={`Escudo de ${actualCity.name}`} width={1000} height={1000}
                         className="absolute right-0 w-20" />
                 </header>
-                <section className="flex flex-col items-center gap-4 px-6 overflow-y-auto text-justify map-modal__content" ref={modalContentRef} onScroll={handleScroll}>
+                <section className="flex flex-col items-center gap-4 px-6 overflow-y-auto text-justify scrollbar" ref={modalContentRef} onScroll={handleScroll}>
                     <section className="flex flex-col items-center w-full gap-1">
                         <Image src={`/img/citys/${actualCity.code}.jpg`} alt="City image" title={`Municipio de ${actualCity.name}`} width={2000} height={2000}
                             className="w-full rounded-3xl max-h-[16.6rem]" />

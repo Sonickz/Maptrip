@@ -1,30 +1,38 @@
 import FormComponent from '@/components/Form'
 import { loginValidationSchema } from '@/app/api/schemas/users.schema'
-import { useState } from 'react'
-import { loginUser } from '@/app/api/config/routes'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { signIn } from 'next-auth/react'
 
 const LoginForm = ({ actualForm, switchForm }) => {
+    const router = useRouter()
     const [loginAlerts, setLoginAlerts] = useState(null)
 
     const loginFields = [
         {
             field: 'email',
             type: 'text',
-            label: 'Correo electronico'
+            label: 'Correo electronico',
+            value: 'ladigiococ@gmail.com'
         },
         {
             field: 'password',
             type: 'password',
-            label: 'Contraseña'
+            label: 'Contraseña',
+            value: '1234567'
         }
     ]
 
-    const loginSubmit = async (values, { resetForm }) => {
-        try {
-            const res = await loginUser(values)
-            setLoginAlerts(res)
-        } catch (error) {
-            setLoginAlerts(error)
+    const loginSubmit = async (values) => {
+        const res = await signIn('credentials', {
+            email: values.email,
+            password: values.password,
+            redirect: false
+        })
+        setLoginAlerts(res)
+        if (res.ok) {
+            router.push('/')
+            router.refresh()
         }
     }
 
@@ -36,6 +44,7 @@ const LoginForm = ({ actualForm, switchForm }) => {
             schemaValidate={loginValidationSchema}
             onSubmit={loginSubmit}
             alerts={loginAlerts}
+            renderHeader={<p className="text-center text-primary-subtitle">Inicia sesion para acceder a todas las funcionalidades.</p>}
             renderChildren={(resetForm) => <p>No tienes una cuenta? <span className="form__leyend" onClick={() => switchForm(resetForm)}>Registrate</span></p>}
         />
     )

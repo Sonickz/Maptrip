@@ -3,15 +3,16 @@ import z from 'zod'
 export const registerValidationSchema = z.object({
     username: z
         .string({ required_error: 'Este campo es obligatorio' })
-        .min(6, { message: 'El nombre de usuario debe tener al menos 6 caracteres' }),
+        .min(6, { message: 'El nombre de usuario debe tener al menos 6 caracteres' })
+        .max(20, { message: 'El nombre de usuario debe tener menos de 20 caracteres' }),
     gender: z
         .string()
         .min(1, { message: 'Este campo es obligatorio' }),
     age: z
-        .number()
+        .number({ invalid_type_error: 'Este campo es obligatorio' })
         .min(1, { message: 'Este campo es obligatorio' })
-        .refine((value) => parseInt(value) >= 18, { message: 'Debes ser mayor de edad' },
-            (value) => parseInt(value) < 122, { message: 'La edad no es valida' }),
+        .refine((value) => value >= 18, { message: 'Debes ser mayor de edad' },
+            (value) => value < 122, { message: 'La edad no es valida' }),
     email: z
         .string({ required_error: 'Este campo es obligatorio' })
         .email({ message: 'Ingrese un correo electronico valido' }),
@@ -31,5 +32,6 @@ export const loginValidationSchema = z.object({
         .string({ required_error: 'Este campo es obligatorio' })
         .email({ message: 'Ingrese un correo electronico valido' }),
     password: z
-        .string({ required_error: 'Este campo es obligatorio' })
+        .string()
+        .min(1, { message: 'Este campo es obligatorio' })
 })

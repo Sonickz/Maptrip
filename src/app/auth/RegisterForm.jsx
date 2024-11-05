@@ -1,7 +1,8 @@
 import FormComponent from '@/components/Form'
+import { registerUser } from '@/app/api/config/routes'
 import { registerValidationSchema } from '@/app/api/schemas/users.schema'
 import { useState } from 'react'
-import { registerUser } from '@/app/api/config/routes'
+import Swal from 'sweetalert2'
 
 
 const RegisterForm = ({ actualForm, switchForm }) => {
@@ -11,15 +12,13 @@ const RegisterForm = ({ actualForm, switchForm }) => {
         {
             field: 'username',
             type: 'text',
-            label: 'Nombre de usuario',
-            value: 'Sonickz'
+            label: 'Nombre de usuario',            
         },
         {
             field: 'gender',
             type: 'select',
             options: [{ label: 'Masculino', value: 'Masculino' }, { label: 'Femenino', value: 'Femenino' }],
-            label: 'Genero',
-            value: 'Masculino'
+            label: 'Genero',            
         },
         {
             field: 'age',
@@ -29,26 +28,22 @@ const RegisterForm = ({ actualForm, switchForm }) => {
                 const value = e.target.value
                 e.target.value = value.replace(/[^0-9]/g, '')
                 if (value >= 122) e.target.value = 122
-            },
-            value: 19
+            },            
         },
         {
             field: 'email',
             type: 'text',
-            label: 'Correo electronico',
-            value: 'ladigiococ@gmail.com'
+            label: 'Correo electronico',            
         },
         {
             field: 'password',
             type: 'password',
-            label: 'Contraseña',
-            value: '12345678'
+            label: 'Contraseña',            
         },
         {
             field: 'confirmPassword',
             type: 'password',
-            label: 'Confirmar contraseña',
-            value: '12345678'
+            label: 'Confirmar contraseña',            
         }
     ]
 
@@ -56,8 +51,23 @@ const RegisterForm = ({ actualForm, switchForm }) => {
         const { confirmPassword, ...data } = values
         try {
             const res = await registerUser(data)
-            setRegisterAlerts(res)
-            resetForm()
+            Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                timer: 5000,
+                timerProgressBar: true,
+                showConfirmButton: false
+            }).fire({
+                icon: 'success',
+                title: res.data.message,
+                text: 'Ya puedes iniciar sesion',
+                customClass: {
+                    container: '!w-[28vw]',
+                    title: '!mb-0'
+                }
+            }).then(() => {
+                switchForm(resetForm)
+            })
         } catch (error) {
             setRegisterAlerts(error)
         }

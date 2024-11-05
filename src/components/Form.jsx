@@ -2,8 +2,9 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { zodValidate } from '@/libs/libs'
 import FormAlert from './FormAlert'
+import Loading from '@/app/loading'
 
-const FormComponent = ({ children, fields, schemaValidate, onSubmit, title, buttonText, className, alerts, renderChildren }) => {
+const FormComponent = ({ children, fields, schemaValidate, onSubmit, title, buttonText, className, alerts, renderChildren, renderHeader }) => {
 
     const initialValues = fields.reduce((acc, field) => {
         acc[field.field] = field.value ? field.value : ''
@@ -16,10 +17,13 @@ const FormComponent = ({ children, fields, schemaValidate, onSubmit, title, butt
                 initialValues={initialValues}
                 validate={zodValidate(schemaValidate)}
                 onSubmit={onSubmit}>
-                {({ resetForm }) => {
+                {({ resetForm, isSubmitting }) => {
                     return (
                         <Form>
-                            <h1 className="form__title">{title}</h1>
+                            <header className='form__header'>
+                                <h1 className="form__title">{title}</h1>
+                                {renderHeader && renderHeader}
+                            </header>
                             <section className="form__inputs">
                                 <FormAlert alerts={alerts} />
                                 {fields.map((field, i) => {
@@ -47,9 +51,10 @@ const FormComponent = ({ children, fields, schemaValidate, onSubmit, title, butt
                                 })}
                             </section>
                             <footer className="form__footer">
-                                <button type="submit" className="form__submit">{buttonText ? buttonText : title}</button>
+                                <button type="submit" className="form__submit">{isSubmitting ? <Loading version={2}/> : buttonText ? buttonText : title}</button>
                             </footer>
                             {renderChildren(resetForm)}
+                            {children}
                         </Form>
                     )
                 }}

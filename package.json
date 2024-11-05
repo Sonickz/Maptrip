@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@prisma/client": "^5.21.1",
     "animate.css": "^4.1.1",
     "axios": "^1.7.7",
     "bcrypt": "^5.1.1",
     "formik": "^2.4.6",
     "next": "^15.0.1",
+    "next-auth": "^4.24.10",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.8.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "sweetalert2": "^11.14.4",
     "vercel": "^32.3.0",
     "zod": "^3.23.8"
   },

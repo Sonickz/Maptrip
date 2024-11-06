@@ -13,13 +13,11 @@ const LoginForm = ({ actualForm, switchForm }) => {
             field: 'email',
             type: 'text',
             label: 'Correo electronico',
-            value: 'ladigiococ@gmail.com'
         },
         {
             field: 'password',
             type: 'password',
             label: 'Contraseña',
-            value: '1234567'
         }
     ]
 

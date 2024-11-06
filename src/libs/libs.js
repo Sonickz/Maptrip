@@ -12,7 +12,6 @@ export const zodValidate = (schema) => (values) => {
 
 export function zodValidateAPI(schema, data, nextAuth) {
     const result = schema.safeParse(data)
-    console.log(schema)
     if (!result.success) {
         if (nextAuth) return { success: false, errors: result.error.issues.map(({ message }) => message) }
         return NextResponse.json({ message: result.error.issues.map(({ message }) => message) }, { status: 400 })

@@ -1,14 +1,16 @@
-import Link from 'next/link' 
-import Image from 'next/image' 
-import { MapSvg } from '@/components/svg/SvgComponents'
+import Link from 'next/link'
+import Image from 'next/image'
+import { MapSvg, LogoMaptrip } from '@/components/svg/SvgComponents'
+import { Divider } from 'primereact/divider'
+import './home.css'
 
 export default function HomePage() {
   return (
-    <article className="relative flex flex-col justify-end !px-0 main">
+    <article className="relative flex flex-col justify-end !px-0 !pb-0 main">
       {/* View 1 */}
-      <article className="view-1 flex flex-row justify-end overflow h-[88vh] ">
+      <article className="view view-1 flex flex-row justify-end overflow h-[87vh]">
         {/* Map */}
-        <section className="absolute left-4 w-[38%] hover:w-[40%] transition-full duration-300">
+        <section className="absolute left-4 w-[37%] hover:w-[40%] transition-full duration-300">
           <MapSvg className="w-full h-full map-svg" />
         </section>
         {/* Content */}
@@ -46,16 +48,32 @@ export default function HomePage() {
           </section>
         </article>
       </article>
+      <Divider layout="horizontal" />
       {/* View 2 */}
-      <article className="flex flex-row justify-center gap-6 p-10 border-2 view-2 border-primary">
-        <section>
-
+      <article className="view view-2 flex flex-col justify-center items-center text-[#16494b]">
+        <header>
+          <LogoMaptrip className="w-[12rem] h-[6rem]" />
+        </header>
+        <section className="flex flex-row justify-center items-center gap-24">
+          <section>
+            <Image src="/img/landscape.png" alt="Landscape Image" width={500} height={500}
+              className="w-full h-full" />
+          </section>
+          <section className="w-[35%]">
+            <h1 className="text-3xl font-extrabold uppercase">Destinos inolvidables, momentos historicos!</h1>
+            <p className="text-xl font-semibold tracking-widest">Nos encargamos de todo para que tu solo tengas que disfrutar...</p>
+          </section>
         </section>
-        <section className="w-[35%]">
-          <h1 className="text-3xl font-bold uppercase">Destinos inolvidables, momentos historicos!</h1>
-          <p className="text-xl tracking-widest">Nos encargamos de todo para que tu solo tengas que disfrutar...</p>
+      </article>
+      <Divider layout="horizontal" />
+      {/* View 3*/}
+      <article className="view view-3 flex flex-row justify-center items-center gap-28">
+        <h1 className="text-5xl text-white font-extrabold text-center capitalize">¿Como funciona <br /> nuestra <br /> pagina web?</h1>
+        <Divider layout="vertical" className="before:!border-neutral-900 h-[60vh]" />
+        <section className="w-[30%]">
+          <MapSvg className="w-full h-full map-svg" />
         </section>
       </article>
     </article>
-  ) 
+  )
 }

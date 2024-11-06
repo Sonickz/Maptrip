@@ -1,0 +1,24 @@
+.view {
+    @apply px-24 py-8 bg-cover bg-center bg-no-repeat;
+}
+
+.view.view-1 {
+    @apply p-0;
+}
+
+.view.view-2 {
+    background: rgb(205, 255, 216);
+    background: linear-gradient(90deg, rgba(205, 255, 216, 0.75) 0%, rgba(83, 157, 150, 0.75) 100%), url('/img/sand.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.view.view-3 {
+    @apply py-16;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6)), url('/img/desk.jpg');
+}
+
+.p-divider{
+    @apply before:border-2 before:border-primary-300 m-0;
+}

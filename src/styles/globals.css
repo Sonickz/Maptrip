@@ -78,7 +78,7 @@ main>* {
 
 /* Generals */
 .main {
-  @apply py-16 px-14;
+  @apply py-24 px-14;
 }
 
 .scrollbar {

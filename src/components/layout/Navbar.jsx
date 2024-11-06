@@ -46,7 +46,7 @@ const Navbar = ({ session }) => {
     ]
 
     return (
-        <nav className="navbar flex items-center py-6 px-16 pr-10 bg-primary text-white h-[64px] fixed w-full z-10">
+        <nav className="navbar flex items-center py-6 px-16 pr-10 bg-primary text-white h-[64px] fixed w-full z-20">
             <section className="relative flex flex-row items-center justify-center w-full">
                 {/* Navbar Title */}
                 <Link className="absolute left-0 text-4xl navbar__title hover:font-bold animate__animated animate__rubberBand" href="/">

@@ -115,6 +115,7 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+
 /* Card */
 .section-form {
   @apply flex flex-col items-center justify-center gap-8 overflow-hidden transition-all duration-700 ease-in-out;

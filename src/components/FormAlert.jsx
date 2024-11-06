@@ -1,9 +1,11 @@
+import { API_URL } from "@/config/config"
 const FormAlert = ({ alerts }) => {
 
     if (!alerts) return
     const status = alerts.status ? alerts.status : null
     const httpCodeErrors = [400, 401, 403, 404, 405, 500]
     console.log(alerts)
+    console.log(API_URL)
     return (
         <section className="flex flex-col gap-2 alert">
             {/* Alert Ok */}

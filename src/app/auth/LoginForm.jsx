@@ -43,7 +43,7 @@ const LoginForm = ({ actualForm, switchForm }) => {
             onSubmit={loginSubmit}
             alerts={loginAlerts}
             renderHeader={<p className="text-center text-primary-subtitle">Inicia sesion para acceder a todas las funcionalidades.</p>}
-            renderChildren={(resetForm) => <p>No tienes una cuenta? <span className="form__leyend" onClick={() => switchForm(resetForm)}>Registrate</span></p>}
+            renderChildren={(resetForm) => <p>No tienes una cuenta? <span className="form__leyend" onClick={() => { switchForm(resetForm); setLoginAlerts(null) }}>Registrate</span></p>}
         />
     )
 }

@@ -12,13 +12,13 @@ const RegisterForm = ({ actualForm, switchForm }) => {
         {
             field: 'username',
             type: 'text',
-            label: 'Nombre de usuario',            
+            label: 'Nombre de usuario',
         },
         {
             field: 'gender',
             type: 'select',
             options: [{ label: 'Masculino', value: 'Masculino' }, { label: 'Femenino', value: 'Femenino' }],
-            label: 'Genero',            
+            label: 'Genero',
         },
         {
             field: 'age',
@@ -28,22 +28,22 @@ const RegisterForm = ({ actualForm, switchForm }) => {
                 const value = e.target.value
                 e.target.value = value.replace(/[^0-9]/g, '')
                 if (value >= 122) e.target.value = 122
-            },            
+            },
         },
         {
             field: 'email',
             type: 'text',
-            label: 'Correo electronico',            
+            label: 'Correo electronico',
         },
         {
             field: 'password',
             type: 'password',
-            label: 'Contraseña',            
+            label: 'Contraseña',
         },
         {
             field: 'confirmPassword',
             type: 'password',
-            label: 'Confirmar contraseña',            
+            label: 'Confirmar contraseña',
         }
     ]
 
@@ -51,6 +51,7 @@ const RegisterForm = ({ actualForm, switchForm }) => {
         const { confirmPassword, ...data } = values
         try {
             const res = await registerUser(data)
+            switchForm(resetForm)
             Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -65,8 +66,6 @@ const RegisterForm = ({ actualForm, switchForm }) => {
                     container: '!w-[28vw]',
                     title: '!mb-0'
                 }
-            }).then(() => {
-                switchForm(resetForm)
             })
         } catch (error) {
             setRegisterAlerts(error)

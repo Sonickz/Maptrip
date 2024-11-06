@@ -3,7 +3,7 @@ const FormAlert = ({ alerts }) => {
     if (!alerts) return
     const status = alerts.status ? alerts.status : null
     const httpCodeErrors = [400, 401, 403, 404, 405, 500]
-
+    console.log(alerts)
     return (
         <section className="flex flex-col gap-2 alert">
             {/* Alert Ok */}
@@ -12,7 +12,7 @@ const FormAlert = ({ alerts }) => {
                     {alerts.data && alerts.data.message}
                 </div>)
                 // Alert Zod Errors
-                : alerts.response ? alerts.response.data.message.map((message, i) => {
+                : alerts.response && Array.isArray(alerts.response.data.message) ? alerts.response.data.message.map((message, i) => {
                     return (
                         <div key={i} className="p-4 mb-4 text-lg text-red-800 bg-red-100 rounded-lg" role="alert">
                             {message}

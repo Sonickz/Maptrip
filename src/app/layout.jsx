@@ -7,6 +7,8 @@ import 'animate.css'
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-blue/theme.css'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: WEB_NAME,
   description: `¡Bienvenido a ${WEB_NAME}!`,

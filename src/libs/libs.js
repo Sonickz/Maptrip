@@ -12,9 +12,11 @@ export const zodValidate = (schema) => (values) => {
 
 export function zodValidateAPI(schema, data, nextAuth) {
     const result = schema.safeParse(data)
-    if (!result.success) {
-        if (nextAuth) return { success: false, errors: result.error.issues.map(({ message }) => message) }
-        return NextResponse.json({ message: result.error.issues.map(({ message }) => message) }, { status: 400 })
-    }
-    if (nextAuth) return { success: true }
+    if (!result.success) return NextResponse.json({ message: result.error.issues.map(({ message }) => message) }, { status: 400 })
+}
+
+export function zodValidateNextAuth(schema, data) {
+    const result = schema.safeParse(data)
+    if (!result.success) return { success: false, errors: result.error.issues.map(({ message }) => message) }
+    return { success: true }
 }

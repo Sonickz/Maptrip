@@ -1,6 +1,6 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { getServerSession } from 'next-auth'
-import { zodValidateAPI } from '@/libs/libs'
+import { zodValidateNextAuth } from '@/libs/libs'
 import { loginValidationSchema } from '@/app/api/schemas/users.schema'
 import prisma from '@/libs/prisma'
 import bcrypt from 'bcrypt'
@@ -18,7 +18,7 @@ export const config = {
                 const { email, password } = data
 
                 //Validate data
-                const validate = zodValidateAPI(loginValidationSchema, { email, password }, "nextAuth")
+                const validate = zodValidateNextAuth(loginValidationSchema, { email, password })
                 if (!validate.success) throw new Error(validate.errors)
 
                 //Find user

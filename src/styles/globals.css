@@ -75,10 +75,32 @@ main>* {
   }
 }
 
+/* Ancho del scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+/* Color de fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: var(--primary-color-200);
+}
+
+/* Color y diseño de la barra */
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-400);
+  border-radius: 5px;
+}
+
+/* Hover en la barra */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color-500);
+}
+
 
 /* Generals */
 .main {
-  @apply py-24 px-14;
+  @apply py-16 px-14;
 }
 
 .scrollbar {

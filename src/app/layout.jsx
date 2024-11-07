@@ -24,7 +24,7 @@ export default async function RootLayout({ children }) {
     <html lang="es">
       <body className={`${nunito.className}`}>
         <Navbar session={session} />
-        <main className="flex flex-col items-center overflow-x-hidden">
+        <main className="flex flex-col items-center overflow-x-hidden pt-16">
           {children}
         </main>
       </body>

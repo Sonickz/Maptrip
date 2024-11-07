@@ -64,9 +64,6 @@ const Navbar = ({ session }) => {
                             </li>
                         )
                     })}
-                    <li>
-
-                    </li>
                 </ul>
                 {/* User */}
                 {!session && (

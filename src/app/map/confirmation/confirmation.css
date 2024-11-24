@@ -1,0 +1,160 @@
+/** Stepper */
+
+/* Nav */
+.p-stepper-nav {
+    @apply px-[0%] !important;
+}
+
+.p-stepper-header-bottom {
+    @apply items-center !important;
+}
+
+/* Numbers */
+.p-stepper-number,
+.p-stepper-separator {
+    @apply bg-primary !important;
+}
+
+/* Panel */
+.p-stepper .p-stepper-panels {
+    @apply pt-20 !important;
+}
+
+
+/** Stepper container */
+
+.stepper-container {
+    @apply flex flex-col gap-16;
+}
+
+.stepper-header {
+    @apply flex flex-row items-center justify-center gap-6;
+}
+
+.stepper-title {
+    @apply text-xl font-bold;
+}
+
+.stepper-content {
+    @apply flex flex-col items-center justify-center gap-12;
+}
+
+.stepper-buttons {
+    @apply flex flex-row items-center w-full;
+}
+
+
+/** Dropdown */
+
+/* Option selected */
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    @apply bg-primary-200 text-primary-800;
+}
+
+/* Focus */
+.p-dropdown:not(.p-disabled).p-focus {
+    box-shadow: 0 0 0 0.2rem var(--primary-color-300);
+}
+
+/** Transport Select */
+.transport-option {
+    @apply opacity-60 w-[15rem] flex flex-col justify-center items-center gap-2 rounded-md p-6 transition-all duration-500 ease-in-out border border-gray-300;
+    box-shadow: 4px 4px 0 0 var(--gray-200);
+}
+
+.transport-option.active {
+    @apply border-primary-500 opacity-100 cursor-pointer;
+    box-shadow: 6px 6px 0 0 var(--primary-color-300);
+}
+
+/** Products */
+.product {
+    @apply flex flex-row justify-center items-end py-12 h-[19rem] relative rounded-xl px-12 transition-all duration-500 ease-in-out border-2 border-gray-300;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.product:hover,
+.product.active {
+    @apply scale-105 border-primary-border;
+    box-shadow: 4px 4px 0 0 var(--primary-color-400);
+}
+
+.product .unique-size {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+
+
+/** Calendar */
+
+/* Prev & next */
+.p-datepicker-next,
+.p-datepicker-prev {
+    @apply hover:bg-[#f3f4f6];
+}
+
+/* Header buttons */
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+    color: #4b5563;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    font-weight: 600;
+    padding: 0.5rem;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+    margin-right: 0.5rem;
+}
+
+/* Header buttons hover */
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year:enabled:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month:enabled:hover {
+    @apply text-primary;
+}
+
+/* Days selected */
+.p-datepicker table td>span.p-highlight {
+    @apply text-primary-600 bg-primary-100;
+}
+
+.p-datepicker:not(.p-disabled) table td span:not(.p-highlight):not(.p-disabled):focus,
+.p-datepicker table td>span:focus {
+    box-shadow: 0 0 0 0.2rem var(--primary-color-300);
+}
+
+/** Final */
+
+/* Fila columans */
+.p-datatable .p-datatable-thead>tr>th {
+    @apply bg-transparent text-primary-900 font-bold;
+}
+
+/* Fila de datos */
+.p-datatable .p-datatable-tbody>tr {
+    @apply bg-transparent text-white;
+    border-top: 1px solid var(--primary-color-600);
+}
+
+/* Title resume section */
+.title-resume {
+    @apply text-2xl mb-6 font-bold text-primary-800;
+}
+
+/* Divider */
+.p-divider {
+    @apply before:border before:border-primary-500;
+}
+
+/** Radio button */
+.p-radiobutton .p-radiobutton-box {
+    @apply border-2 border-gray-200 transition-all duration-200 bg-white w-[22px] h-[22px] text-[#4b5563] rounded-[50%] outline-none;   
+}
+
+/* Radio button hover */
+.pay-method:hover .p-radiobutton:not(.p-disabled) .p-radiobutton-box {
+    @apply border-primary-400;
+}
+
+/* Radio button selected */
+.p-radiobutton.p-highlight .p-radiobutton-box {
+    @apply bg-primary border-primary;
+}

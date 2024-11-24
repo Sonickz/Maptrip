@@ -1,0 +1,380 @@
+[
+    {
+        "id": 1,
+        "code": "19001",
+        "name": "Popayán",
+        "description": "Popayán, conocida como \"La Ciudad Blanca\", es una joya colonial en el suroccidente de Colombia, famosa por su arquitectura blanca, su rica historia y tradiciones culturales. Rodeada de montañas y volcanes, ofrece paisajes impresionantes, una vibrante escena gastronómica y es reconocida como Ciudad de la Gastronomía por la UNESCO. Además, es un centro académico y cultural, con una Semana Santa que es Patrimonio Cultural Inmaterial de la Humanidad, atrayendo a miles de visitantes. Popayán es el perfecto equilibrio entre historia, naturaleza y modernidad.",
+        "history": "Popayán, conocida como \"\"La Ciudad Blanca\"\", es la capital del departamento del Cauca y un verdadero tesoro histórico de Colombia. Fundada en 1537 por Sebastián de Belalcázar, esta ciudad ha sido testigo de importantes eventos en la historia del país, incluyendo su papel como capital de La Nueva Granada en 1855. Popayán es famosa por su impresionante arquitectura colonial, que se refleja en su Centro Histórico, uno de los más grandes y mejor conservados de América Latina. Además, es conocida como la cuna de presidentes, ya que ha visto nacer a dieciséis presidentes colombianos, lo que resalta su relevancia política y cultural. La ciudad también es famosa por su Semana Santa, una celebración que atrae a miles de visitantes cada año, destacando la profunda tradición religiosa y cultural de sus habitantes. Con su rica historia, su belleza arquitectónica y su vibrante vida cultural, Popayán es un lugar que invita a ser explorado y apreciado. ¡Un rincón del Cauca que brilla con luz propia!",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 2,
+        "code": "19022",
+        "name": "Almaguer",
+        "description": "Almaguer, Cauca, es un rincón mágico enclavado en las montañas del suroccidente colombiano. Este municipio es conocido por sus paisajes de verde exuberante, cascadas escondidas y un cielo que parece tocar las nubes. Con una rica herencia cultural indígena, sus tradiciones y la calidez de su gente crean un ambiente donde la historia y la naturaleza se entrelazan, invitando a descubrir su autenticidad y belleza.",
+        "history": "Almaguer, un encantador municipio del Cauca, fue fundado el 19 de agosto de 1555, y su historia está marcada por la riqueza cultural y la resistencia de su gente. Este lugar, que se asienta en el corazón del Macizo Colombiano, ha sido testigo de importantes eventos históricos, como la participación de sus habitantes en la lucha por la independencia de Colombia. Figuras destacadas como Juan Bautista Guzmán, un patriota que luchó en las batallas de Ayacucho y Junín, emergieron de esta tierra, dejando una huella imborrable en la historia nacional. Almaguer no solo es conocido por su legado histórico, sino también por su vibrante folclor y tradiciones que celebran la identidad de su comunidad. Con un clima fresco y paisajes montañosos, este municipio es un símbolo de la riqueza cultural y natural del Cauca, donde cada rincón cuenta una historia de valentía y orgullo.",
+        "price": 140000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 3,
+        "code": "19050",
+        "name": "Argelia",
+        "description": "Argelia, Cauca es un encantador municipio escondido entre las majestuosas montañas del suroeste colombiano. Con paisajes verdes y ríos cristalinos, es un paraíso natural donde la biodiversidad florece en cada rincón. Este lugar, lleno de tradiciones campesinas y gente cálida, invita a descubrir su riqueza cafetera y su espíritu resiliente, siendo un remanso de paz en medio de la naturaleza exuberante. ¡Un destino para conectarse con la tranquilidad y la autenticidad rural!",
+        "history": "Argelia, un municipio lleno de historia y encanto en el Cauca, fue establecido como corregimiento del municipio del Tambo en 1927 y se convirtió en municipio el 3 de noviembre de 1967. Este lugar ha sido testigo de transformaciones significativas a lo largo de los años, incluyendo un periodo de violencia en la década de los noventa que marcó su historia reciente. Sin embargo, la resiliencia de su gente ha permitido que Argelia se mantenga como un símbolo de esperanza y comunidad. Rodeado de paisajes montañosos y una rica biodiversidad, Argelia es también conocido por su producción agrícola, especialmente de café, que refleja la conexión profunda de sus habitantes con la tierra. Este municipio no solo es un punto en el mapa, sino un lugar donde las tradiciones y la cultura florecen, haciendo de Argelia un destino fascinante en el corazón del Cauca.",
+        "price": 160000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 4,
+        "code": "19075",
+        "name": "Balboa",
+        "description": "Balboa, Cauca, es un encantador municipio enclavado en las montañas del suroccidente colombiano, donde la naturaleza vibra con fuerza. Conocido como la \"Puerta del Pacífico\", ofrece paisajes impresionantes de verdes montañas y ríos cristalinos. Su gente, cálida y trabajadora, preserva tradiciones ancestrales mientras se dedica al cultivo del café y la caña. Balboa es un rincón de serenidad donde la biodiversidad y la cultura se entrelazan, creando un paraíso oculto para quienes buscan la tranquilidad y la belleza natural.",
+        "history": "Balboa, un encantador municipio del Cauca, tiene una historia que se remonta a la colonización de sus tierras en 1912, cuando pioneros como Sixto Girón y Rubén Sánchez comenzaron a labrar el camino hacia lo que hoy conocemos. Este territorio, que antes formaba parte de las fincas Luna y Las Palmas, fue oficialmente reconocido como municipio el 20 de octubre de 1967, gracias a la Ordenanza No. 001 de la Asamblea Departamental del Cauca. Rodeado de montañas y un clima fresco, Balboa es un lugar donde la naturaleza y la cultura se entrelazan. Su gente, conocida por su calidez y hospitalidad, celebra tradiciones que reflejan su rica herencia. Este municipio no solo es un punto en el mapa, sino un símbolo de la perseverancia y el espíritu comunitario que florece en el corazón del Cauca. Balboa es un destino que invita a descubrir su historia y disfrutar de su belleza natural.",
+        "price": 110000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 5,
+        "code": "19100",
+        "name": "Bolívar",
+        "description": "Bolívar, Cauca, es un encantador municipio enclavado en las montañas andinas de Colombia. Conocido por su riqueza cultural y paisajes impresionantes, este lugar mágico fusiona historia, naturaleza exuberante y tradiciones ancestrales. Rodeado de ríos cristalinos y montañas cubiertas de verde, Bólivar es un destino perfecto para los amantes de la tranquilidad y la aventura, donde cada rincón invita a la exploración y el asombro.",
+        "history": "Bolívar, un municipio lleno de historia en el Cauca, se destaca por su rica herencia cultural y su importancia en la región. Fundado oficialmente en 1884, este lugar ha sido un punto clave en la historia del departamento, siendo reconocido por el Congreso de Colombia en 1822 como un cuartel importante. Su ubicación estratégica entre montañas y ríos ha favorecido el desarrollo agrícola y comercial, convirtiéndolo en un centro vital para la comunidad. A lo largo de los años, Bolívar ha sido testigo de transformaciones significativas, desde la llegada de los españoles hasta su papel en la independencia. Su gente, caracterizada por su calidez y hospitalidad, celebra tradiciones que reflejan su identidad única. Con paisajes impresionantes y una rica biodiversidad, Bolívar no solo es un lugar en el mapa, sino un símbolo de resistencia y comunidad en el corazón del Cauca.",
+        "price": 130000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 6,
+        "code": "19110",
+        "name": "Buenos Aires",
+        "description": "Buenos Aires, Cauca, es un rincón encantador del suroeste colombiano donde la naturaleza y la cultura vibran en perfecta armonía. Rodeado de montañas verdes, ríos cristalinos y un legado afrocolombiano profundo, este municipio es un espacio de resistencia, música, y tradiciones que celebran la vida. Con su energía acogedora y su riqueza natural, Buenos Aires es un destino que conecta al visitante con la esencia auténtica del Cauca.",
+        "history": "Buenos Aires, un encantador municipio del Cauca, se fundó gracias al esfuerzo del fraile franciscano Javier Villamarín y otros pioneros en 1884. Su nombre evoca la frescura de la brisa y la calidez de su clima, características que han atraído a muchos a esta región. Situado en la Provincia Norte, Buenos Aires ha sido un punto de encuentro cultural y agrícola, donde la comunidad se ha forjado a través de la historia. A lo largo de los años, este municipio ha enfrentado desafíos, pero su gente ha demostrado una notable resiliencia. Con una población de aproximadamente 22,804 habitantes, Buenos Aires no solo es un lugar de historia, sino también un destino que apuesta por el turismo de naturaleza, aprovechando su rica biodiversidad y paisajes impresionantes. Este rincón del Cauca es un verdadero tesoro que invita a explorar su legado y disfrutar de su belleza natural.",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 7,
+        "code": "19130",
+        "name": "Cajibío",
+        "description": "Cajibío, un encantador municipio en el corazón del Cauca, es un paraíso escondido entre montañas y ríos cristalinos. Con su aire puro y paisajes de ensueño, es tierra fértil para el café y el maíz, donde la tradición indígena se entrelaza con la historia colonial. Su riqueza natural y cultural lo convierte en un destino perfecto para los amantes de la naturaleza y la tranquilidad. Cajibío es más que un lugar, es una experiencia de conexión profunda con la esencia del campo colombiano.",
+        "history": "Cajibío, un municipio vibrante del Cauca, fue fundado el 16 de octubre de 1560, lo que lo convierte en uno de los lugares con una rica historia en la región. Situado a solo 29 km al norte de Popayán, Cajibío es conocido como \"El Rincón Musical de Colombia\", un título que refleja su rica tradición cultural y artística. Con una población aproximada de **38,149 habitantes**, este municipio ha sido un crisol de mitos, leyendas y costumbres que se entrelazan en su identidad. Cajibío no solo es un lugar de historia, sino también un destino que celebra su diversidad cultural a través de festivales y eventos que resaltan su herencia musical y artística. Rodeado de paisajes montañosos y una biodiversidad impresionante, Cajibío invita a explorar su belleza natural y a sumergirse en la calidez de su gente. Este rincón del Cauca es un verdadero tesoro que combina historia, cultura y naturaleza en un solo lugar.",
+        "price": 100000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 8,
+        "code": "19137",
+        "name": "Caldono",
+        "description": "Caldono, en el corazón del Cauca, es un municipio vibrante donde la riqueza cultural indígena y la naturaleza exuberante se fusionan. Rodeado de verdes montañas y atravesado por ríos cristalinos, este rincón es un santuario de tradiciones ancestrales y resistencia, donde el espíritu comunitario y la biodiversidad florecen en cada rincón.",
+        "history": "Caldono, un municipio lleno de historia en el Cauca, fue fundado el 15 de febrero de 1730. Su origen se remonta a la época colonial, cuando grupos indígenas Paeces, liderados por el Cacique Diego Calambás, se refugiaron en las montañas para escapar de las tribus vecinas, creando así un legado de resistencia y adaptación en la región. A lo largo de los años, Caldono ha enfrentado desafíos significativos, siendo uno de los municipios más afectados por la violencia en Colombia, con 248 ataques registrados por grupos armados. Sin embargo, su comunidad ha demostrado una notable resiliencia, manteniendo vivas sus tradiciones y cultura a pesar de las adversidades. Hoy en día, Caldono es un lugar donde la historia y la cultura se entrelazan, ofreciendo un paisaje montañoso impresionante y una población que celebra su identidad con orgullo. Este rincón del Cauca es un testimonio de la fortaleza de su gente y un destino que invita a explorar su rica herencia.",
+        "price": 130000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 9,
+        "code": "19142",
+        "name": "Caloto",
+        "description": "Caloto, en el corazón del Cauca, es un municipio vibrante lleno de historia y naturaleza exuberante. Rodeado de montañas y valles fértiles, es conocido por sus paisajes verdes y su rica tradición indígena Nasa. Este rincón del suroccidente colombiano mezcla cultura ancestral, cafetales y una energía única que invita a descubrir sus encantos. ¡Un lugar donde la historia se fusiona con la belleza natural!",
+        "history": "Caloto, un municipio fascinante del Cauca, tiene una historia rica y tumultuosa. Fundado en el siglo XVI, este lugar ha sido refundado al menos siete veces, lo que lo convierte en un caso excepcional en la historia colonial de Colombia. Su ubicación estratégica lo hizo un punto de interés tanto para colonizadores como para grupos indígenas, lo que llevó a su destrucción y posterior reconstrucción en varias ocasiones. Hoy, Caloto es conocido no solo por su historia, sino también por su vibrante cultura y su población de aproximadamente 36,901 habitantes. Este municipio se destaca por su oferta turística y gastronómica, atrayendo a visitantes que buscan disfrutar de su belleza natural y su rica herencia cultural. Con paisajes montañosos y una comunidad acogedora, Caloto es un lugar que invita a explorar su legado y disfrutar de la calidez de su gente.",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 10,
+        "code": "19212",
+        "name": "Corinto",
+        "description": "Corinto, Cauca, es un vibrante rincón enclavado entre montañas y ríos, donde la fuerza de la naturaleza y el espíritu de su gente se unen. Famoso por su riqueza cultural y paisajes exuberantes, este municipio es un punto de encuentro entre tradiciones indígenas, cafetales y una biodiversidad fascinante. Un lugar donde la historia y la naturaleza narran sus propias leyendas en cada rincón.",
+        "history": "Corinto, un municipio cautivador del Cauca, fue fundado en 1867 por los hermanos Antonio y Juan Bautista Feijoo. Este lugar, que alguna vez formó parte del curato de los Frisoles, ha sido testigo de una rica historia marcada por la resiliencia de su gente y su búsqueda de paz tras años de conflicto armado. Conocido por su belleza natural, Corinto se encuentra rodeado de paisajes impresionantes, incluyendo cascadas y montañas que invitan a la aventura. La comunidad, que actualmente cuenta con aproximadamente 24,000 habitantes, ha trabajado arduamente en la construcción de un futuro más esperanzador, especialmente después de la firma del acuerdo de paz con las FARC, lo que ha generado un ambiente de esperanza y renovación en la región. Corinto no solo es un lugar de historia, sino también un símbolo de la fortaleza y la unidad de su gente, que celebra su cultura a través de festivales y tradiciones que reflejan su identidad única. ¡Un rincón del Cauca que definitivamente merece ser explorado!",
+        "price": 140000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 11,
+        "code": "19256",
+        "name": "El Tambo",
+        "description": "El Tambo, Cauca, es un rincón encantador entre montañas, donde la naturaleza florece en cada rincón. Con paisajes exuberantes, ríos cristalinos y un clima fresco, este municipio es el hogar de tradiciones ancestrales y un espíritu comunitario vibrante. El Tambo es tierra fértil, tanto en su agricultura como en su cultura, donde el café y la caña de azúcar son protagonistas, y sus festividades reflejan la riqueza de su gente y su historia. ¡Un tesoro oculto en el corazón del Cauca!",
+        "history": "El Tambo, un encantador municipio del Cauca, fue fundado el 15 de septiembre de 1641 y tiene raíces que se remontan a la época de la conquista española. Su nombre proviene de la palabra quechua \"\"tambo\"\", que significa \"\"lugar de descanso\"\", reflejando su historia como un punto de paso para viajeros y comerciantes en la región andina. Este municipio, ubicado en un hermoso altiplano, es famoso por ser el mayor productor de chontaduro en Colombia, una fruta tropical que es un símbolo de la gastronomía local. Además, El Tambo es conocido por su rica biodiversidad, ya que parte de su territorio se encuentra en el Parque Nacional Natural Munchique, un paraíso para los amantes de la naturaleza. Con una población que celebra su herencia cultural a través de festivales y tradiciones, El Tambo es un lugar donde la historia y la naturaleza se entrelazan, invitando a todos a descubrir su belleza y calidez. ¡Un rincón del Cauca que no te puedes perder!",
+        "price": 140000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 12,
+        "code": "19290",
+        "name": "Florencia",
+        "description": "Florencia, Cauca, es un rincón escondido entre montañas verdes y ríos cristalinos, donde la naturaleza florece en cada esquina. Este municipio es un oasis de tranquilidad y belleza, ideal para quienes buscan conectar con la esencia rural del suroccidente colombiano. Su gente cálida y sus paisajes exuberantes hacen de Florencia un destino perfecto para explorar el encanto auténtico de la región caucana.",
+        "history": "Florencia, un municipio vibrante del Cauca, fue fundado el 17 de diciembre de 1535 y se ha convertido en un punto clave en la historia de la región. Su ubicación estratégica, a orillas del río Cauca, lo ha hecho un lugar de paso y comercio desde tiempos coloniales, donde se entrelazan las culturas indígena y mestiza. Con una extensión de 5,628.50 hectáreas y una altitud de 1,500 metros, Florencia disfruta de un clima templado que favorece la agricultura, convirtiéndose en un importante productor de café y caña de azúcar. Su población, que supera los 30,000 habitantes, celebra su rica herencia cultural a través de festivales que resaltan su música y tradiciones. A pesar de los desafíos que ha enfrentado, incluyendo el impacto del conflicto armado en Colombia, Florencia se ha mantenido como un símbolo de resiliencia y esperanza, donde la comunidad trabaja unida por un futuro mejor. ¡Un lugar lleno de historia y calidez que invita a ser descubierto!",
+        "price": 140000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 13,
+        "code": "19300",
+        "name": "Guachené",
+        "description": "Guachené, Cauca, es un vibrante municipio de raíces afrodescendientes, conocido por su energía cultural y su espíritu de comunidad. Rodeado de exuberantes paisajes naturales, se destaca por su historia de resistencia y por ser cuna de grandes deportistas. Con sus festividades llenas de música, danza y tradición, Guachené es un lugar donde la herencia ancestral y la modernidad se encuentran para celebrar la vida.",
+        "history": "Guachené, un municipio vibrante del Cauca, fue oficialmente fundado el 16 de diciembre de 2006, convirtiéndose en uno de los más recientes de la región. Su nombre proviene de la voz \"\"guacheta\"\", en honor al cacique Guachene, líder de una tribu indígena que habitaba la zona en el siglo XIX, perteneciente a los Paeces, descendientes de los caribes que llegaron por el río Magdalena. Este municipio no solo es un lugar de historia, sino también de cultura y deporte. Guachené ha dado al mundo futbolistas destacados como Yerry Mina y Davinson Sánchez, quienes brillan en equipos europeos y en la Selección Colombia. Además, su hermosa plaza central y las ‘Playas del río Palo’ son puntos de encuentro que reflejan la calidez de su gente y su amor por la convivencia. A pesar de ser un municipio joven, Guachené se ha consolidado como un territorio de paz y esperanza, donde la comunidad trabaja unida para construir un futuro brillante. ¡Un lugar lleno de vida y oportunidades que invita a ser explorado!",
+        "price": 110000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 14,
+        "code": "19318",
+        "name": "Guapí",
+        "description": "Guapí, Cauca, es un vibrante rincón de la costa pacífica colombiana, donde la selva se encuentra con el mar y la tradición afrodescendiente late en cada esquina. Conocido por su riqueza cultural y natural, Guapí es una tierra de manglares, ríos serpenteantes y una biodiversidad que deja sin aliento, donde la música del currulao y el sabor de sus mariscos frescos te envuelven en una atmósfera mágica y auténtica.",
+        "history": "Guapí, un encantador municipio del Cauca, fue fundado el 11 de diciembre de 1772 y se erige como un importante centro cultural y comercial de la región. Este lugar, que alguna vez fue la capital de la antigua provincia del Micay, se encuentra a orillas del río Guapi, a solo unos kilómetros del océano Pacífico, lo que le otorga un atractivo natural inigualable. Con una población predominantemente afrodescendiente, Guapí es un crisol de tradiciones y costumbres que reflejan su rica herencia cultural. La influencia africana se siente en su música, danzas y gastronomía, convirtiendo a Guapí en un lugar vibrante y lleno de vida. A lo largo de su historia, Guapí ha sido un punto de encuentro para diversas culturas y ha enfrentado desafíos, pero su comunidad ha demostrado una notable resiliencia. Hoy en día, es un símbolo de esperanza y unidad, donde la gente trabaja en conjunto para construir un futuro mejor. ¡Un rincón del Cauca que invita a ser explorado y disfrutado!",
+        "price": 200000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 15,
+        "code": "19355",
+        "name": "Inzá",
+        "description": "Inzá, Cauca, es un tesoro escondido en las montañas andinas de Colombia, donde la historia ancestral y la naturaleza exuberante se entrelazan. Este pintoresco municipio, conocido como \"la tierra del agua\", resplandece con cascadas cristalinas, imponentes paisajes verdes y sitios arqueológicos como Tierradentro, Patrimonio de la Humanidad. Inzá es un rincón mágico que invita a descubrir su cultura indígena, su tranquilidad rural y su conexión profunda con la Madre Tierra.",
+        "history": "Inzá, un municipio lleno de historia y encanto en el Cauca, fue fundado el 1 de marzo de 1577. Este lugar, que se asienta en un territorio rico en cultura y tradiciones, ha sido testigo de la llegada de expedicionarios desde el virreinato de Quito en el siglo XV, quienes dejaron su huella en la región. Uno de los tesoros más destacados de Inzá es su conexión con el Parque Arqueológico Nacional de Tierradentro, reconocido por su impresionante patrimonio arqueológico y declarado Patrimonio de la Humanidad por la UNESCO. Este parque alberga tumbas precolombinas y esculturas que narran la historia de las antiguas civilizaciones que habitaron la zona. Inzá no solo es un lugar de historia, sino también un centro de producción agrícola, donde los cultivos de café y caña de azúcar son fundamentales para la economía local. La comunidad, compuesta por diversas etnias, celebra su diversidad cultural a través de festivales y tradiciones que reflejan su identidad única. ¡Inzá es un rincón del Cauca que invita a explorar su rica historia y disfrutar de su belleza natural!",
+        "price": 180000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 16,
+        "code": "19364",
+        "name": "Jambaló",
+        "description": "Jambaló, en el corazón del Cauca, es un municipio vibrante y lleno de cultura ancestral, donde las montañas verdes se fusionan con el espíritu indígena Nasa. Sus paisajes, llenos de ríos cristalinos y valles fértiles, inspiran a quien los visita, mientras su comunidad lucha por preservar sus tradiciones y su rica herencia cultural. Es un refugio de naturaleza, resistencia y saberes ancestrales, que invita a reconectarse con la tierra y sus raíces.",
+        "history": "Jambaló, un municipio lleno de historia y cultura en el Cauca, fue fundado el 23 de agosto de 1770 por Agustín Girón y Antonio Dagua. Este lugar, que se encuentra en el corazón de la comunidad Nasa, es un verdadero crisol de tradiciones indígenas que han perdurado a lo largo de los siglos. Desde su primera fundación en 1537, Jambaló ha sido un punto de encuentro para la resistencia y la identidad cultural de los pueblos indígenas. Su paisaje montañoso y su rica biodiversidad lo convierten en un lugar impresionante, donde la naturaleza y la cultura se entrelazan de manera única. La comunidad de Jambaló se destaca por su fuerte conexión con sus raíces, celebrando festivales que honran sus tradiciones ancestrales y promoviendo la lengua y costumbres Nasa. A pesar de los desafíos que ha enfrentado, Jambaló sigue siendo un símbolo de esperanza y unidad, donde la gente trabaja en conjunto para preservar su legado cultural y construir un futuro brillante. ¡Un rincón del Cauca que invita a ser explorado y apreciado!",
+        "price": 130000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 17,
+        "code": "19392",
+        "name": "La Sierra",
+        "description": "La Sierra, Cauca, es un rincón encantador rodeado de majestuosas montañas y valles fértiles, donde la naturaleza se entrelaza con la tradición. Este municipio es un refugio de biodiversidad, cultura ancestral y paisajes que te roban el aliento. Con su gente cálida y trabajadora, La Sierra ofrece una experiencia auténtica de la Colombia rural, llena de coloridos cultivos de café y una atmósfera de paz que invita a la aventura y la contemplación.",
+        "history": "La Sierra, un encantador municipio del Cauca, fue fundado el 18 de abril de 1913 por Cristóbal Cerón. Este lugar tiene una rica historia que se remonta a hace más de 400 años, cuando los primeros colonos españoles llegaron a la región, estableciendo las bases de lo que hoy conocemos como La Sierra. Ubicado en un paisaje montañoso, este municipio es conocido por su biodiversidad y su clima templado, lo que lo convierte en un lugar ideal para la agricultura. La comunidad se dedica principalmente a la producción de café, caña de azúcar y otros cultivos, reflejando la conexión profunda entre sus habitantes y la tierra. A lo largo de los años, La Sierra ha sido un símbolo de resistencia y unidad, donde la cultura local se celebra a través de festivales y tradiciones que honran su herencia. ¡Un rincón del Cauca que invita a descubrir su historia y disfrutar de su belleza natural!",
+        "price": 140000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 18,
+        "code": "19397",
+        "name": "La Vega",
+        "description": "La Vega, Cauca, es un rincón mágico escondido entre las montañas andinas de Colombia. Este municipio vibra con la energía de sus ríos cristalinos, cascadas impresionantes y exuberantes paisajes verdes. Con su clima templado y gente cálida, es un paraíso para los amantes de la naturaleza y la aventura. La Vega es un lugar donde la tranquilidad y la belleza natural se fusionan, invitando a explorar y disfrutar de la auténtica esencia del Cauca.",
+        "history": "La Vega, un municipio encantador del Cauca, fue fundado el 9 de septiembre de 1777 y tiene una historia rica que se remonta a la llegada de los españoles en 1535, cuando exploradores liderados por Juan de Ampudia comenzaron a establecerse en la región. Este lugar, conocido por su belleza natural y su clima templado, se ha convertido en un importante centro agrícola, destacándose en la producción de café y caña de azúcar. La Vega es famosa por su diversidad cultural, donde las tradiciones indígenas y mestizas se entrelazan, creando un ambiente vibrante y acogedor. La comunidad celebra su herencia a través de festivales coloridos y eventos que resaltan su identidad única. Además, su ubicación estratégica entre montañas y ríos la convierte en un destino ideal para los amantes de la naturaleza y el ecoturismo. ¡La Vega es un rincón del Cauca que invita a explorar su historia y disfrutar de su esplendor natural!",
+        "price": 140000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 19,
+        "code": "19418",
+        "name": "López de Micay",
+        "description": "López de Micay, joya escondida del Cauca, es un paraíso natural donde ríos caudalosos y montañas exuberantes se encuentran con la costa pacífica. Este municipio es un refugio biodiverso, rodeado de selvas vírgenes y una riqueza cultural afrocolombiana vibrante, donde las tradiciones ancestrales y la naturaleza salvaje coexisten en perfecta armonía. ¡Un destino para quienes buscan aventura, cultura y paisajes impresionantes!",
+        "history": "López de Micay, un encantador municipio del Cauca, fue fundado el 9 de febrero de 1911 y se ubica en la hermosa Costa Pacífica, en la región del Naya. Este lugar, rodeado de exuberante naturaleza y montañas, es conocido por su biodiversidad y su rica cultura afrocolombiana, que se refleja en sus tradiciones y festividades. La historia de López de Micay está marcada por su conexión con el río Micay, que ha sido vital para la vida de sus habitantes. Este municipio no solo es un paraíso natural, sino también un centro de producción agrícola, donde el cultivo de plátano y café son fundamentales para la economía local. A pesar de los desafíos que ha enfrentado, como la violencia en la región, la comunidad de López de Micay se destaca por su resiliencia y su espíritu de unidad. ¡Un rincón del Cauca que invita a explorar su historia y disfrutar de su belleza natural!",
+        "price": 190000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 20,
+        "code": "19450",
+        "name": "Mercaderes",
+        "description": "Mercaderes, Cauca, es un encantador rincón colombiano donde la tradición y la naturaleza se encuentran en perfecta armonía. Rodeado de majestuosas montañas y valles fértiles, este municipio es conocido por su gente cálida, paisajes impresionantes y una rica herencia cultural. Su suelo fértil produce café y caña de azúcar de alta calidad, mientras que sus festividades llenan de color y vida las calles. Mercaderes es un destino ideal para quienes buscan la tranquilidad de un pueblo con el alma vibrante del Cauca profundo.",
+        "history": "Mercaderes, un municipio vibrante del Cauca, fue fundado el 15 de agosto de 1910 y se ha convertido en un lugar emblemático por su rica historia y cultura. Este encantador rincón del sur de Colombia, ubicado cerca de la vía Panamericana, ha sido un importante centro agrícola, conocido especialmente por su producción de maíz, aunque hoy enfrenta desafíos significativos como la falta de oportunidades y la violencia. La historia de Mercaderes está marcada por su diversidad cultural, donde las tradiciones indígenas y afrocolombianas se entrelazan, creando un ambiente único. A pesar de los retos, la comunidad se destaca por su resiliencia y su espíritu de lucha, buscando siempre un futuro mejor. Con paisajes naturales impresionantes y una rica herencia cultural, Mercaderes invita a todos a explorar su historia y disfrutar de su calidez. ¡Un lugar donde el pasado y el presente se encuentran en cada rincón!",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 21,
+        "code": "19455",
+        "name": "Miranda",
+        "description": "Miranda, Cauca, es un vibrante municipio enclavado entre montañas verdes y ríos cristalinos. Conocido por su rica herencia cultural y su gente acogedora, es un lugar donde la naturaleza exuberante se mezcla con la historia y la tradición. Aquí, los paisajes cafeteros y cañeros se funden con la energía de sus festividades, haciendo de Miranda un destino único lleno de color, sabor y encanto.",
+        "history": "Miranda, un municipio cautivador del Cauca, fue fundado el 7 de mayo de 1899 por Julio Fernández Medina, inicialmente bajo el nombre de El Espejuelo. Este lugar, rodeado de paisajes montañosos y una rica biodiversidad, se ha convertido en un símbolo de esfuerzo y trabajo comunitario. La historia de Miranda está marcada por su desarrollo urbano y su importancia en la región, especialmente durante tiempos de crisis económica y política en Colombia. A lo largo de los años, la comunidad ha cultivado una identidad fuerte, fusionando su herencia cultural con un espíritu de progreso y unidad. Hoy en día, Miranda no solo es conocida por su belleza natural, sino también por la calidez de su gente y su compromiso con el desarrollo sostenible. ¡Un rincón del Cauca que invita a explorar su historia y disfrutar de su autenticidad!",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 22,
+        "code": "19473",
+        "name": "Morales",
+        "description": "Morales, Cauca, es un rincón encantador rodeado de montañas verdes y bañado por ríos cristalinos. Con una rica herencia indígena y campesina, este municipio es un tesoro de tradiciones culturales y paisajes naturales vírgenes. Morales invita a descubrir su tranquilidad rural, su gente acogedora y sus colores vibrantes que pintan cada esquina de su tierra fértil.",
+        "history": "Morales, un encantador municipio del Cauca, fue fundado el 27 de septiembre de 1806 por los beneméritos Juan Manuel Morales y Juan de Rivera Torrea. Este pintoresco lugar se encuentra a solo 41 km de Popayán y se caracteriza por su economía agrícola, donde el cultivo de caña de azúcar y café son protagonistas. La historia de Morales está marcada por su rica cultura y tradiciones, que reflejan la fusión de influencias indígenas y coloniales. A lo largo de los años, la comunidad ha demostrado una notable resiliencia, enfrentando desafíos y celebrando su identidad a través de festivales y eventos culturales. Hoy, Morales no solo es conocido por su belleza natural y su clima templado, sino también por la calidez de su gente. ¡Un rincón del Cauca que invita a explorar su historia y disfrutar de su autenticidad!",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 23,
+        "code": "19513",
+        "name": "Padilla",
+        "description": "Padilla, Cauca, es un pequeño municipio lleno de historia y cultura, conocido por su cálido ambiente y la calidez de su gente. Ubicado entre paisajes de caña de azúcar y montañas, Padilla es un lugar donde la tradición y la naturaleza se entrelazan, ofreciendo un escape tranquilo en el corazón del Cauca.",
+        "history": "Padilla, un municipio lleno de historia y encanto en el Cauca, fue fundado el 30 de noviembre de 1967 por visionarios como Gonzalo Loboa y Marcial Aguilar. Este lugar, que comenzó como un corregimiento dependiente de Corinto, ha crecido y se ha consolidado como un espacio vibrante donde la comunidad se une en torno a sus tradiciones y cultura. La población de Padilla tiene raíces profundas, con una historia que incluye la llegada de colonos y la influencia de comunidades afrodescendientes. A lo largo de los años, el municipio ha enfrentado desafíos, pero su gente ha demostrado una notable resiliencia y un fuerte sentido de identidad. Hoy, Padilla es conocido no solo por su belleza natural y su clima agradable, sino también por la calidez de su gente y su compromiso con el desarrollo sostenible. ¡Un rincón del Cauca que invita a descubrir su historia y disfrutar de su autenticidad!",
+        "price": 110000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 24,
+        "code": "19517",
+        "name": "Páez (Belalcázar)",
+        "description": "Páez, Cauca, es un municipio vibrante rodeado por majestuosas montañas andinas y bañado por el río Páez. Reconocido por su rica herencia indígena nasa, es un lugar donde la cultura ancestral se fusiona con paisajes de ensueño. La fuerza de su gente, que ha superado adversidades naturales y sociales, se refleja en su arte, música y tradiciones, haciendo de Páez un rincón mágico lleno de historia y resiliencia.",
+        "history": "Páez, un municipio fascinante del Cauca, fue fundado el 22 de febrero de 1908 y se encuentra a unos 130 km de Popayán. Este lugar, conocido por su belleza natural y su rica cultura, es hogar de la comunidad Paeces, que ha mantenido vivas sus tradiciones a lo largo de los años. La historia de Páez está marcada por su conexión con el río Páez, que no solo da nombre al municipio, sino que también ha sido vital para la vida de sus habitantes. La región es famosa por su biodiversidad y paisajes impresionantes, que incluyen montañas y valles exuberantes. A pesar de los desafíos que ha enfrentado, como la violencia en la región, la comunidad de Páez se destaca por su resiliencia y su fuerte sentido de identidad. ¡Un rincón del Cauca que invita a explorar su historia y disfrutar de su riqueza cultural!",
+        "price": 160000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 25,
+        "code": "19532",
+        "name": "Patía",
+        "description": "Patía, conocido como \"La Puerta del Sur\" del Cauca, es un municipio vibrante donde se entrelazan paisajes montañosos y valles fértiles. Con una rica historia y tradiciones culturales, es hogar de la resistencia afrodescendiente y una tierra de grandes músicos. Patía cautiva con su biodiversidad, gastronomía y el calor de su gente, convirtiéndose en un rincón fascinante por descubrir en el sur de Colombia.",
+        "history": "Patía, un municipio lleno de historia y encanto en el Cauca, fue fundado el 22 de octubre de 1824. Este hermoso lugar se sitúa en la cuenca del río Patía, un recurso vital que ha moldeado la vida y la cultura de sus habitantes a lo largo de los años. La región es conocida por su biodiversidad y paisajes impresionantes, que incluyen montañas y valles fértiles. Patía ha sido un crisol de culturas, donde las tradiciones indígenas y afrocolombianas se entrelazan, creando una identidad rica y vibrante. A pesar de los desafíos que ha enfrentado, como la violencia y la desigualdad, la comunidad de Patía se destaca por su resiliencia y su espíritu de unidad. Hoy, este municipio no solo es un lugar de belleza natural, sino también un símbolo de la lucha y la esperanza de su gente. ¡Un rincón del Cauca que invita a descubrir su historia y disfrutar de su autenticidad!",
+        "price": 140000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 26,
+        "code": "19533",
+        "name": "Piamonte",
+        "description": "Piamonte, Cauca, es un paraíso escondido en la selva amazónica colombiana, donde la biodiversidad exuberante y los ríos cristalinos se entrelazan con la cultura indígena y campesina. Este rincón remoto es ideal para quienes buscan aventuras en la naturaleza, conectarse con la tranquilidad de sus paisajes vírgenes y descubrir la riqueza cultural que emerge de la fusión entre lo tradicional y lo natural.",
+        "history": "Piamonte, un municipio lleno de historia en el Cauca, fue oficialmente reconocido como tal gracias a la ordenanza 024 del 18 de noviembre de 1996. Este reconocimiento fue el resultado de luchas comunitarias, impulsadas por paros en 1994 y 1996, que exigían atención del gobierno central ante el abandono que sufría la región, especialmente en lo que respecta a las regalías petroleras). Fundado el 2 de julio de 1959, Piamonte se ha convertido en un lugar donde la comunidad se une para enfrentar desafíos y construir un futuro mejor. Su ubicación estratégica en la baja Bota Caucana le otorga un entorno natural privilegiado, ideal para la agricultura y la vida rural.Hoy, Piamonte no solo es un símbolo de resistencia y unidad, sino también un espacio donde la cultura y las tradiciones locales florecen. ¡Un rincón del Cauca que invita a descubrir su rica historia y disfrutar de su calidez!",
+        "price": 180000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 27,
+        "code": "19548",
+        "name": "Piendamó",
+        "description": "Piendamó, Cauca, es un vibrante municipio conocido por su riqueza cultural y paisajes verdes. Ubicado entre montañas y bañado por ríos cristalinos, destaca por sus artesanías indígenas, especialmente la cestería en guadua y fique. Con su clima templado y cálida hospitalidad, Piendamó invita a descubrir la magia de la naturaleza y la tradición en el corazón del Cauca.",
+        "history": "Piendamó, un municipio vibrante del Cauca, toma su nombre del cacique indígena Piemdamú, un líder que simboliza la rica herencia cultural de la región. Fundado el 13 de octubre de 2008, aunque su historia se remonta al siglo XVI, cuando la zona era habitada por los indígenas Piendamó y Tunía, quienes dejaron una huella indeleble en la identidad local. Este encantador lugar se destaca por su producción agrícola, especialmente en café, y por su clima templado que favorece el cultivo. Además, Piendamó es conocido por su belleza natural, con paisajes que invitan a la exploración y el disfrute de la biodiversidad. A pesar de los retos que ha enfrentado, la comunidad de Piendamó se caracteriza por su espíritu resiliente y su fuerte sentido de pertenencia. ¡Un rincón del Cauca que no solo cuenta con una rica historia, sino que también brilla por la calidez de su gente y su cultura vibrante!",
+        "price": 110000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 28,
+        "code": "19573",
+        "name": "Puerto Tejada",
+        "description": "Puerto Tejada, Cauca, es un vibrante municipio ubicado en el corazón del Valle del Cauca, donde la calidez de su gente y la rica herencia afrocolombiana se mezclan con paisajes verdes y la vitalidad de sus expresiones culturales. Famoso por su espíritu alegre y su diversidad, Puerto Tejada es un lugar lleno de música, sabor y tradición, que refleja la resistencia y creatividad de sus habitantes.",
+        "history": "Puerto Tejada, un encantador municipio del Cauca, fue fundado el 14 de julio de 1897 como corregimiento de Caloto, con el objetivo de concentrar a la población campesina en la región. Su crecimiento fue notable, y en 1912 se erigió como municipio independiente, marcando un hito en su historia. Ubicado en el fértil valle del río Cauca, Puerto Tejada se ha convertido en un importante centro agrícola, conocido por su producción de caña de azúcar y otros cultivos. La comunidad, rica en tradiciones y cultura, celebra diversas festividades que reflejan su identidad y la calidez de su gente. A lo largo de los años, Puerto Tejada ha enfrentado desafíos, pero su espíritu resiliente y su fuerte sentido de comunidad lo han mantenido en pie. ¡Un rincón del Cauca que invita a descubrir su historia y disfrutar de su vibrante vida cultural!",
+        "price": 110000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 29,
+        "code": "19585",
+        "name": "Puracé (Coconuco)",
+        "description": "Puracé, Cauca, es un tesoro escondido entre las montañas andinas, donde la naturaleza se despliega en su máxima expresión. Hogar del majestuoso volcán Puracé y de cristalinas aguas termales, este municipio ofrece paisajes exuberantes, cascadas imponentes y fauna única, como el majestuoso cóndor. Es un lugar ideal para los amantes de la aventura, la tranquilidad y el contacto profundo con la naturaleza.",
+        "history": "Puracé, un municipio encantador del Cauca, es conocido por su impresionante volcán Puracé, que no solo es un atractivo turístico, sino también un símbolo de la riqueza natural de la región. Este municipio, cuya cabecera es Coconuco, se encuentra a solo 30 km de Popayán y es famoso por sus aguas termales y paisajes de ensueño. La historia de Puracé está marcada por su conexión con las comunidades indígenas, que han habitado la zona durante siglos, dejando un legado cultural profundo. Además, el volcán ha sido objeto de numerosas leyendas que enriquecen la tradición oral de la región, convirtiéndolo en un lugar de misterio y fascinación. Hoy en día, Puracé es un destino ideal para los amantes de la naturaleza y la aventura, ofreciendo actividades como senderismo y avistamiento de aves. ¡Un rincón del Cauca que invita a explorar su historia y disfrutar de su belleza natural!",
+        "price": 160000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 30,
+        "code": "19622",
+        "name": "Rosas",
+        "description": "Rosas, Cauca, es un encantador municipio enclavado en las montañas andinas de Colombia, donde la tranquilidad de sus paisajes verdes se mezcla con la calidez de su gente. Con su clima fresco y sus fértiles tierras, es un lugar ideal para la agricultura y el descanso en medio de la naturaleza. Rosas es un refugio rural que invita a descubrir la esencia del campo caucano, sus tradiciones y su belleza natural inigualable.",
+        "history": "Rosas, un encantador municipio del Cauca, lleva su nombre en honor al general Avelino Rosas, un destacado militar liberal que luchó por la independencia de Cuba. Originalmente conocido como \"\"Dolores\"\", este municipio fue fundado en un contexto de fervor revolucionario y ha mantenido su espíritu combativo a lo largo de los años). Ubicado en la parte centro-oriental del departamento, Rosas se caracteriza por su belleza natural y su rica biodiversidad. Con una altitud de 1,717 metros, el municipio ofrece paisajes impresionantes que invitan a la exploración y el disfrute de la naturaleza. A pesar de los desafíos que ha enfrentado, como deslizamientos de tierra en su territorio, la comunidad de Rosas se destaca por su resiliencia y su fuerte sentido de identidad. ¡Un rincón del Cauca que combina historia, cultura y un entorno natural cautivador!",
+        "price": 100000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 31,
+        "code": "19693",
+        "name": "San Sebastián",
+        "description": "San Sebastián, Cauca, es un rincón encantador de la cordillera andina, donde la naturaleza exuberante y las tradiciones ancestrales se entrelazan en cada rincón. Este municipio vibra con su herencia indígena y campesina, rodeado de verdes montañas, ríos cristalinos y paisajes que invitan a la aventura. Un lugar donde la tranquilidad y la autenticidad aún reinan, perfecto para quienes buscan conectarse con la esencia profunda de la cultura y la belleza natural de Colombia.",
+        "history": "San Sebastián, un encantador municipio del Cauca, fue fundado en 1562 por Pedro Antonio Gómez, lo que lo convierte en uno de los asentamientos más antiguos de la región. Este lugar, ubicado en las estribaciones del Macizo Colombiano, ha mantenido su esencia colonial a lo largo de los siglos, ofreciendo un vistazo al pasado con su arquitectura tradicional y su rica historia cultural. Rodeado de paisajes impresionantes, San Sebastián es conocido por su biodiversidad y sus aguas puras, lo que lo convierte en un destino ideal para los amantes de la naturaleza. La comunidad, que cuenta con aproximadamente 12,976 habitantes, se caracteriza por su calidez y su fuerte conexión con las tradiciones indígenas que han influido en su identidad. A pesar de su cercanía a Popayán, San Sebastián ha logrado conservar su autenticidad y encanto, convirtiéndose en un lugar perfecto para explorar la historia y disfrutar de la belleza natural del Cauca. ¡Un rincón que invita a descubrir su magia!",
+        "price": 130000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 32,
+        "code": "19698",
+        "name": "Santa Rosa",
+        "description": "Santa Rosa, Cauca, es un rincón encantado en las montañas colombianas, donde la naturaleza vibra en cada rincón. Rodeado de exuberantes paisajes verdes y ríos cristalinos, este municipio es hogar de tradiciones indígenas y campesinas que se entrelazan en su cultura viva. Sus montañas ofrecen miradores espectaculares y su gente, cálida y acogedora, mantiene viva la esencia de lo rural, con festividades coloridas y una rica herencia histórica que lo convierten en un destino cautivador.",
+        "history": "Santa Rosa, un encantador municipio del Cauca, fue fundado el 26 de junio de 1593, lo que lo convierte en un lugar con una rica historia que se remonta a la época colonial. Situado en la falda oriental de la cordillera central, en el corazón del Macizo Colombiano, este municipio es conocido por su belleza natural y su biodiversidad. La economía de Santa Rosa se basa principalmente en la Agricultura, destacándose en la producción de maíz y caña de azúcar, lo que refleja la conexión de la comunidad con la tierra. Con una población de aproximadamente 5,300 habitantes, sus gentes son cálidas y acogedoras, manteniendo vivas las tradiciones que han forjado su identidad. A pesar de los desafíos que ha enfrentado a lo largo de los años, Santa Rosa sigue siendo un lugar vibrante, lleno de historia y cultura, que invita a los visitantes a explorar sus paisajes y disfrutar de su rica herencia. ¡Un rincón del Cauca que no te puedes perder!",
+        "price": 130000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 33,
+        "code": "19701",
+        "name": "Santander de Quilichao",
+        "description": "Santander de Quilichao, joya del norte del Cauca, es un vibrante municipio que fusiona tradición y modernidad. Rodeado de imponentes montañas y ríos cristalinos, es cuna de culturas afrocolombianas, indígenas y mestizas. Su gente cálida y trabajadora preserva una rica herencia cultural, reflejada en sus festividades, sabores únicos y artesanías. Conocido por su actividad minera, Santander de Quilichao también es el corazón agrícola y comercial de la región, ofreciendo paisajes naturales fascinantes y una energía contagiosa que lo hace inolvidable.",
+        "history": "Santander de Quilichao, un vibrante municipio del Cauca, fue fundado el 16 de julio de 1755 y se ha convertido en un importante centro cultural y económico de la región. Su historia se remonta a la época de la colonización, cuando Sebastián de Belalcázar estableció la primera población en 1543, conocida como Jamaica de los Quilichao, marcando el inicio de una rica herencia cultural. Ubicado a 97 km al norte de Popayán y a 45 km al sur de Cali, Santander de Quilichao es conocido por su diversidad étnica, albergando comunidades indígenas y afrodescendientes que han contribuido a su identidad única. La región es famosa por su producción agrícola, especialmente en cultivos como el café y la caña de azúcar, lo que la convierte en un pilar económico del Cauca. Además, el municipio ha sido un escenario clave en la historia reciente de Colombia, siendo un punto de encuentro para diversas manifestaciones culturales y sociales. ¡Un lugar donde la historia y la modernidad se entrelazan, invitando a todos a descubrir su magia!",
+        "price": 100000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 34,
+        "code": "19743",
+        "name": "Silvia",
+        "description": "Silvia, Cauca, es un pintoresco municipio enclavado en las verdes montañas de los Andes colombianos, conocido por su vibrante cultura indígena guambiana. Es un lugar donde las tradiciones ancestrales se mezclan con paisajes naturales impresionantes: cascadas, ríos cristalinos y campos de neblina. Los coloridos mercados locales, llenos de artesanías y tejidos tradicionales, y la calidez de su gente, hacen de Silvia un destino mágico y lleno de vida.",
+        "history": "Silvia, un encantador municipio del Cauca, fue fundado el 23 de octubre de 1562 por el conquistador Francisco de Belalcázar. Originalmente conocido como Guambía, este lugar se transformó en Silvia en 1838, reflejando su evolución a lo largo de los siglos. Situado a 2,620 metros sobre el nivel del mar en un hermoso valle interandino, Silvia es hogar de seis resguardos indígenas, incluyendo a los Misak y Guambianos, quienes han mantenido vivas sus tradiciones y cultura. Este municipio no solo es un centro cultural, sino también un punto de encuentro para la biodiversidad y la agricultura, destacándose en la producción de café y otros cultivos. Silvia es un lugar donde la historia y la cultura indígena se entrelazan, ofreciendo un rico patrimonio que invita a los visitantes a explorar su belleza natural y su legado ancestral. ¡Un rincón del Cauca que brilla con su autenticidad y encanto!",
+        "price": 150000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 35,
+        "code": "19760",
+        "name": "Sotará (Paispamba)",
+        "description": "Sotará, en el corazón del Cauca, es un tesoro escondido entre montañas imponentes y paisajes de ensueño. Este municipio andino se destaca por su naturaleza exuberante, con ríos cristalinos y páramos mágicos. Es un rincón donde la historia ancestral convive con la calidez de su gente, y el imponente Volcán Sotará vigila desde las alturas. Ideal para aventureros y amantes de la tranquilidad, Sotará es un destino que invita a descubrir la esencia pura de los Andes colombianos.",
+        "history": "Sotará, un encantador municipio del Cauca, fue fundado el 12 de marzo de 1936, aunque su historia se remonta a épocas anteriores con la influencia de comunidades indígenas. Su cabecera, Paispamba, es un lugar lleno de tradición y cultura, donde la naturaleza y la historia se entrelazan. Ubicado en la parte centro-oriental del departamento, Sotará es conocido por su impresionante biodiversidad y su riqueza natural, destacándose el volcán Sotará, que simboliza la riqueza de su tierra. Con una población aproximada de 15,894 habitantes, este municipio es un punto de encuentro para la cultura indígena y mestiza, donde las tradiciones se mantienen vivas a través de festividades y costumbres locales. Sotará no solo es un lugar de belleza natural, sino también un espacio donde la historia y la comunidad se unen, invitando a todos a descubrir su magia y autenticidad. ¡Un rincón del Cauca que merece ser explorado!",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 36,
+        "code": "19780",
+        "name": "Suárez",
+        "description": "Suárez, Cauca, es un paraíso escondido entre montañas verdes y ríos cristalinos, donde la naturaleza y la cultura afrocolombiana vibran en cada rincón. Su gente, cálida y resiliente, ha tejido una historia de lucha y alegría, rodeada de paisajes exuberantes y música que conecta con la tierra. Este municipio es una joya por descubrir, donde la tradición, el sabor y la biodiversidad se encuentran en perfecta armonía.",
+        "history": "Suárez, un municipio vibrante del Cauca, fue fundado en 1989 en honor al presidente Marco Fidel Suárez, quien dejó una huella importante en la historia colombiana. Este encantador lugar se encuentra al noroccidente del departamento y limita con el municipio de Buenos Aires, ofreciendo un paisaje natural impresionante. Con una población de aproximadamente 19,002 habitantes, Suárez es conocido por su rica cultura y tradiciones, que se reflejan en sus festividades y en la calidez de su gente. La represa de La Salvajina es uno de sus principales atractivos, no solo por su belleza, sino también por su importancia económica y ecológica. La historia de Suárez está marcada por la resistencia y la autonomía de sus comunidades, especialmente en áreas como La Toma, donde se han desarrollado movimientos sociales significativos. Este municipio es un verdadero tesoro del Cauca, donde la historia y la naturaleza se entrelazan, invitando a todos a descubrir su magia y autenticidad. ¡Un lugar que definitivamente merece ser explorado!",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 37,
+        "code": "19785",
+        "name": "Sucre",
+        "description": "Sucre, Cauca, es un rincón mágico escondido entre las verdes montañas del suroccidente colombiano, donde la tradición y la naturaleza se entrelazan en una danza de colores vibrantes. Este municipio, conocido por su riqueza cultural y biodiversidad, ofrece paisajes impresionantes, ríos cristalinos y un ambiente lleno de historia indígena y campesina. Es un lugar donde la tranquilidad rural se mezcla con la calidez de su gente, creando un destino perfecto para quienes buscan autenticidad y conexión con lo natural.",
+        "history": "Sucre, un municipio encantador del Cauca, fue fundado el 1 de enero de 1991, lo que lo convierte en una de las localidades más jóvenes de la región. Situado a una altitud de 1,140 metros sobre el nivel del mar, Sucre disfruta de un clima cálido, con temperaturas que rondan los 26 °C, ideal para la agricultura y la producción de café. Este municipio es conocido por su belleza natural, destacando el Charco del Burro, un atractivo turístico con aguas cristalinas que invitan a la diversión y el descanso. Sucre también es un lugar de rica diversidad cultural, donde las tradiciones locales se celebran con entusiasmo en festividades que reflejan la identidad de su gente. A pesar de su juventud, Sucre ha demostrado ser un lugar de crecimiento y desarrollo, siendo un símbolo de esperanza y progreso en el Cauca. ¡Un rincón lleno de vida y color que espera ser descubierto!",
+        "price": 130000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 38,
+        "code": "19807",
+        "name": "Timbío",
+        "description": "Timbío, Cauca, es un rincón encantador rodeado de montañas verdes y cafetales. Con su aire fresco y una tradición cultural vibrante, este municipio es conocido por su gente cálida, su deliciosa gastronomía y sus fiestas llenas de color. Es un lugar donde la naturaleza y la historia se entrelazan, ofreciendo paisajes serenos y una riqueza cultural que invita a ser descubierta.",
+        "history": "Timbío, un municipio lleno de historia y encanto, fue fundado el 1 de noviembre de 1535 por los conquistadores españoles Juan de Ampudia y Pedro de Añasco, bajo la orden de Sebastián de Belalcázar. Este lugar, que se asienta sobre tierras habitadas por los indígenas Pubenenses y Pambíos, se convierte en el tercer municipio más antiguo del Cauca, reflejando una rica herencia cultural. Ubicado a solo 15 kilómetros de Popayán, Timbío es conocido por su belleza natural y su clima agradable, lo que lo convierte en un destino atractivo para los amantes de la naturaleza. Además, su población se caracteriza por una fuerte identidad cultural, con tradiciones que se celebran en festividades locales que llenan de color y alegría sus calles. Este municipio no solo es un testigo del pasado, sino también un lugar vibrante donde la historia y la modernidad se entrelazan, invitando a todos a explorar su magia y autenticidad. ¡Un rincón del Cauca que definitivamente merece ser visitado!",
+        "price": 110000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 39,
+        "code": "19809",
+        "name": "Timbiquí",
+        "description": "Timbiquí, un rincón mágico del Cauca, es un abrazo entre la selva y el mar. Este municipio, bañado por las aguas del océano Pacífico, se viste de colores vibrantes gracias a su rica cultura afrodescendiente y sus tradiciones ancestrales. Aquí, el ritmo del chigualo y la marimba resuenan en cada rincón, mientras la gastronomía local deleita con sabores únicos que evocan la generosidad de la tierra. Timbiquí no solo es un destino, es una experiencia sensorial donde la naturaleza se encuentra con la calidez de su gente, invitando a todos a sumergirse en un viaje inolvidable entre paisajes exuberantes y sonrisas contagiosas.",
+        "history": "Timbiquí, un municipio fascinante del Cauca, fue fundado en 1772 por Francisco Antonio de Mosquera y Andrés Saa. Este encantador lugar se ubica en la costa pacífica de Colombia, en la desembocadura del río Timbiquí, donde la naturaleza y la cultura afrocolombiana se entrelazan de manera mágica.Con una población de aproximadamente 21,600 habitantes, Timbiquí es conocido por su rica tradición musical y su vibrante cultura, que se celebra en festivales llenos de ritmo y color. En 1915, Timbiquí fue elevado a la categoría de municipio, marcando un hito en su desarrollo. El 1 de octubre de 2012, un terremoto afectó a sus habitantes, pero la resiliencia de la comunidad ha sido admirable, mostrando su capacidad para reconstruir y seguir adelante. Timbiquí es un lugar donde la historia, la cultura y la naturaleza se fusionan, invitando a todos a descubrir su belleza y autenticidad. ¡Un rincón del Cauca que no te puedes perder!",
+        "price": 190000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 40,
+        "code": "19821",
+        "name": "Toribío",
+        "description": "Toribío, un tesoro escondido en el corazón del Cauca, es un lugar donde la historia y la naturaleza se entrelazan en un abrazo vibrante. Rodeado de majestuosos montañas y ríos cristalinos, este municipio se destaca por su rica herencia indígena, donde las tradiciones nativas florecen en cada rincón. Con sus coloridos mercados, el aroma del café recién cosechado y el eco de la música ancestral, Toribío invita a los visitantes a explorar sus paisajes cautivadores y a sumergirse en una cultura que celebra la vida. Aquí, cada amanecer es una promesa de aventuras y cada atardecer un lienzo de colores que cuentan historias de resistencia y esperanza.",
+        "history": "Toribío, un municipio lleno de historia y cultura, fue fundado en 1904 y se encuentra en el corazón del Cauca, a unos 123 kilómetros de Popayán. Este lugar es conocido por su rica herencia indígena, siendo hogar de comunidades Nasa que han luchado por preservar sus tradiciones y derechos a lo largo de los años. Con una población de aproximadamente 26,616 habitantes, Toribío ha enfrentado desafíos significativos, especialmente durante el conflicto armado en Colombia. Sin embargo, su gente es resiliente y trabajadora, produciendo alimentos que alimentan gran parte del departamento. La belleza natural de la región, con sus montañas y paisajes verdes, es un atractivo que invita a los visitantes a explorar. En tiempos recientes, Toribío ha comenzado a florecer como un destino turístico, promoviendo su biodiversidad y cultura a través de iniciativas que buscan resaltar su riqueza histórica y natural. ¡Un rincón del Cauca que combina historia, cultura y un futuro esperanzador!",
+        "price": 130000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 41,
+        "code": "19824",
+        "name": "Totoró",
+        "description": "Totoró, un encantador municipio del Cauca, es un refugio de paz y belleza natural que invita a explorar sus paisajes de montaña y valles verdes. Conocido como la \"Capital Mundial de la Papa\", este lugar no solo ofrece una rica producción agrícola, sino también un cálido abrazo cultural que se siente en cada sonrisa de su gente. Sus festividades, llenas de color y alegría, celebran las tradiciones campesinas, mientras que la frescura del clima y la pureza del aire revitalizan el alma. Totoró es más que un destino; es un viaje a través de la esencia misma de la vida rural colombiana, donde cada atardecer pinta el cielo con tonos de esperanza y comunidad.",
+        "history": "Totoró, un encantador municipio del Cauca, se alza como \"\"La puerta de Oro del Oriente Caucano\"\". Fundado en 1904, este lugar es un crisol de culturas, con una población compuesta en un 85% por comunidades indígenas, que han mantenido vivas sus tradiciones a lo largo de los años. Rodeado de montañas y ubicado en la cuenca alta del Río Cauca, Totoró es conocido por su impresionante paisaje natural y su clima fresco. A pesar de la escasez de información histórica, se reconoce la importancia de la resistencia indígena durante la conquista y su influencia en la identidad del municipio. A lo largo de los años, Totoró ha sido un escenario de movimientos cívicos que han buscado el reconocimiento y la defensa de los derechos de sus habitantes, reflejando la fortaleza y la unidad de su comunidad. Este municipio no solo es un lugar de belleza natural, sino también un símbolo de lucha y esperanza en medio de los desafíos. ¡Un destino que invita a explorar su rica historia y cultura!",
+        "price": 120000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    },
+    {
+        "id": 42,
+        "code": "19845",
+        "name": "Villa Rica",
+        "description": "Villa Rica, un vibrante municipio del Cauca, es un auténtico crisol de culturas y tradiciones. Sus tierras fértiles, bañadas por ríos cristalinos, son el hogar de una rica producción agrícola, destacando el café que enamora a los paladares más exigentes. Con un ambiente festivo, Villa Rica se llena de vida en sus coloridas celebraciones, donde la música y el baile contagian a todos. Rodeado de montañas y paisajes exuberantes, este rincón del Pacífico colombiano invita a los visitantes a sumergirse en su calidez y hospitalidad. Villa Rica es un lugar donde cada día es una fiesta y cada rincón cuenta una historia de alegría y esperanza.",
+        "history": "Villa Rica, un municipio lleno de vida en el norte del Cauca, tiene una historia que se remonta a los años 30, cuando comenzó a formarse en los terrenos de la Hacienda La Bolsa. Aunque oficialmente fue fundado el 11 de noviembre de 1998, su esencia cultural y agrícola ha estado presente mucho antes, con familias que han cultivado la tierra y mantenido tradiciones vivas. Este lugar, conocido por su clima cálido y su rica producción de café, se ha convertido en un punto de encuentro de diversas culturas, donde la alegría y la hospitalidad de su gente son el reflejo de su historia. Villa Rica no solo es un municipio, sino un símbolo de resistencia y comunidad, que celebra su identidad a través de festividades vibrantes y un espíritu indomable.",
+        "price": 100000,
+        "createdAt": "2024-10-24T17:24:50.998Z"
+    }
+]

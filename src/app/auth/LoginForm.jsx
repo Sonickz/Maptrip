@@ -27,11 +27,11 @@ const LoginForm = ({ actualForm, switchForm }) => {
             password: values.password,
             redirect: false
         })
-        setLoginAlerts(res)
         if (res.ok) {
             router.push('/')
             router.refresh()
         }
+        setLoginAlerts(res)
     }
 
     return (

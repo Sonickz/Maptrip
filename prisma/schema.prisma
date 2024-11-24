@@ -11,20 +11,67 @@ datasource db {
 }
 
 model Users {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
+  id        Int       @id @default(autoincrement())
+  username  String    @unique
   gender    String
   age       Int
-  email     String   @unique
+  email     String    @unique
   password  String
-  createdAt DateTime @default(now())
+  travels   Travels[]
+  createdAt DateTime  @default(now())
 }
 
 model Citys {
-  id          Int      @id @default(autoincrement())
-  code        String
-  name        String
+  id          Int       @id @default(autoincrement())
+  code        String    @unique
+  name        String    @unique
   description String
   history     String
-  createdAt   DateTime @default(now())
+  price       Int
+  travels     Travels[]
+  createdAt   DateTime  @default(now())
+}
+
+model Transports {
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  capacity String
+  price    Int
+  Travels  Travels[]
+}
+
+model Products {
+  id             Int              @id @default(autoincrement())
+  name           String           @unique
+  sizes          String?
+  price          Int
+  img            String
+  ProductsOrders ProductsOrders[]
+}
+
+model ProductsOrders {
+  id        Int      @id @default(autoincrement())
+  product   Products @relation(fields: [productId], references: [id])
+  productId Int
+  travel    Travels  @relation(fields: [travelId], references: [id])
+  travelId  Int
+  size      String
+  quantity  Int
+}
+
+model Travels {
+  id             Int              @id @default(autoincrement())
+  user           Users            @relation(fields: [userId], references: [id])
+  userId         Int
+  persons        Int
+  dateStart      DateTime
+  dateEnd        DateTime
+  city           Citys            @relation(fields: [cityId], references: [id])
+  cityId         Int
+  transport      Transports       @relation(fields: [transportId], references: [id])
+  transportId    Int
+  ProductsOrders ProductsOrders[]
+  paymentId      String @unique 
+  price          Int
+  createdAt      DateTime         @default(now())
 }

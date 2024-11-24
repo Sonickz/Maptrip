@@ -68,7 +68,7 @@ export default function HomePage() {
       <Divider layout="horizontal" />
       {/* View 3*/}
       <article className="view view-3 flex flex-row justify-center items-center gap-28 !py-16">
-        <h1 className="text-5xl text-white font-extrabold text-center capitalize">¿Como funciona <br /> nuestra <br /> pagina web?</h1>
+        <h1 className="text-5xl text-white font-extrabold text-center capitalize">¡Empieza <br /> a <br />interactuar!</h1>
         <Divider layout="vertical" className="before:!border-neutral-900 h-[60vh]" />
         <section className="w-[30%]">
           <MapSvg className="w-full h-full map-svg" />

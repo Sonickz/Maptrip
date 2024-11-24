@@ -3,9 +3,9 @@ import { Nunito } from 'next/font/google'
 import { WEB_NAME } from '@/config/config'
 import Navbar from '@/components/layout/Navbar'
 import '@/styles/globals.css'
-import 'animate.css'
 import 'primeicons/primeicons.css';
 import 'primereact/resources/themes/lara-light-blue/theme.css'
+import 'animate.css'
 
 export const metadata = {
   title: WEB_NAME,
@@ -24,7 +24,7 @@ export default async function RootLayout({ children }) {
     <html lang="es">
       <body className={`${nunito.className}`}>
         <Navbar session={session} />
-        <main className="flex flex-col items-center overflow-x-hidden pt-16">
+        <main className="flex flex-col items-center overflow-x-hidden pt-16">          
           {children}
         </main>
       </body>

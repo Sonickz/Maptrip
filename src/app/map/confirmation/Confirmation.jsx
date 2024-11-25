@@ -127,7 +127,7 @@ export default function Confirmation({ session, data, transaction }) {
                 <li className={`transport-option ${isActive ? 'active' : ''}`}
                     title={!selectedPersons ? 'Selecciona la cantidad de personas primero' : name}>
                     <div className="w-[8rem]">
-                        <Image src={`/img/transports/${name}.png`} alt="Transport image" width={500} height={500} className="w-full" />
+                        <Image src={`/img/transports/${name.toLowerCase()}.png`} alt="Transport image" width={500} height={500} className="w-full" />
                     </div>
                     <h1 className="text-lg font-bold">{name}</h1>
                     <p className="text-center">{min === 1 && max === 1 ? 'Unico pasajero' : `Minimo ${min} - Maximo ${max}`}</p>

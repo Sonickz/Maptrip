@@ -56,7 +56,7 @@ export default function Confirmation({ session, data, transaction }) {
                     showConfirmButton: false,
                 }).then(() => {
                     router.push('/map')
-                    router.refresh()
+                    location.reload()
                 }),
                 rejected: () => Swal.fire({
                     icon: 'error',
@@ -336,14 +336,16 @@ export default function Confirmation({ session, data, transaction }) {
             price: totalTravel
         }
 
-        const productsOrdersData = stepperProducts.map(({ id: productId, size }) => {
-            return {
-                productId,
-                travelId: null,
-                size,
-                quantity: 1
-            }
-        })
+        const productsOrdersData = stepperProducts.length > 0 ?
+            stepperProducts.map(({ id: productId, size }) => {
+                return {
+                    productId,
+                    travelId: null,
+                    size,
+                    quantity: 1
+                }
+            })
+            : {}
 
         const paymentData = {
             userName,
@@ -465,7 +467,7 @@ export default function Confirmation({ session, data, transaction }) {
                                 {/* Productos */}
                                 {stepperProducts.length > 0 && (
                                     <>
-                                        <section>
+                                        <section className="travel-products">
                                             <h2 className="title-resume">Productos</h2>
                                             <DataTable value={stepperProducts} size="normal">
                                                 <Column field="name" header="Producto" />

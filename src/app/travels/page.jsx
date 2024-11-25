@@ -24,6 +24,6 @@ export default async function TravelsPage() {
     })
 
     return (
-        <Travels session={session} userTravels={travelsData} />
+        <Travels userTravels={travelsData} />
     );
 }

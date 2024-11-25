@@ -48,7 +48,7 @@ export default async function ConfirmationPage({ searchParams }) {
     if (preference_id && !transactionPreferenceId) return redirect('/map')
     if (transactionPreferenceId) {
         const findTravel = await prisma.travels.findUnique({ where: { preferenceId: transactionPreferenceId } })
-        if (findTravel) transactionData = { id: transactionPreferenceId, status: 'approved' }
+        transactionData = { id: transactionPreferenceId, status: findTravel ? 'approved' : 'rejected' }
     }
 
     return (

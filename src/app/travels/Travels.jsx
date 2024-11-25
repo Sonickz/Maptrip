@@ -5,9 +5,9 @@ import { Button } from 'primereact/button'
 import { useRouter } from 'next/navigation'
 
 
-const Travels = ({ session, userTravels }) => {
+const Travels = ({ userTravels }) => {
     const router = useRouter()
-
+    console.log(userTravels)
     const formatUserTravels = userTravels.map((travel) => {
         return {
             ...travel,

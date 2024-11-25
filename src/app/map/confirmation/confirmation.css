@@ -124,12 +124,12 @@
 /** Final */
 
 /* Fila columans */
-.p-datatable .p-datatable-thead>tr>th {
+.travel-products .p-datatable .p-datatable-thead>tr>th {
     @apply bg-transparent text-primary-900 font-bold;
 }
 
 /* Fila de datos */
-.p-datatable .p-datatable-tbody>tr {
+.travel-products .p-datatable .p-datatable-tbody>tr {
     @apply bg-transparent text-white;
     border-top: 1px solid var(--primary-color-600);
 }

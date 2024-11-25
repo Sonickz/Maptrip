@@ -9,7 +9,7 @@ export async function POST(req) {
     const { data: { id } } = data
 
     try {
-        const payment = await new Payment(mercadopago).get({ id })        
+        const payment = await new Payment(mercadopago).get({ id })
         if (payment.status === 'approved') {
             const preferenceId = payment.metadata.id
             const { travel_data: {
@@ -46,22 +46,24 @@ export async function POST(req) {
             })
 
             //Save products
-            const products = products_orders_data.map(({ product_id, size, quantity }) => {
-                return {
-                    productId: product_id,
-                    travelId: newTravel.id,
-                    size,
-                    quantity
-                }
-            })
+            if (products_orders_data.length > 0) {
+                const products = products_orders_data.map(({ product_id, size, quantity }) => {
+                    return {
+                        productId: product_id,
+                        travelId: newTravel.id,
+                        size,
+                        quantity
+                    }
+                })
 
-            await prisma.productsOrders.createMany({
-                data: products
-            })
+                await prisma.productsOrders.createMany({
+                    data: products
+                })
+            }
         }
         return NextResponse.json(null, { status: 200 })
     } catch (error) {
-        console.log(error)
+        console.error(error)
         return petitionError(error, 'Creating preference error')
     }
 }

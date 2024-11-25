@@ -1,6 +1,6 @@
 import FormComponent from '@/components/Form'
 import { loginValidationSchema } from '@/app/api/schemas/users.schema'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 
@@ -12,12 +12,12 @@ const LoginForm = ({ actualForm, switchForm }) => {
         {
             field: 'email',
             type: 'text',
-            label: 'Correo electronico',
+            label: 'Correo electronico'
         },
         {
             field: 'password',
             type: 'password',
-            label: 'Contraseña',
+            label: 'Contraseña'
         }
     ]
 
@@ -27,11 +27,11 @@ const LoginForm = ({ actualForm, switchForm }) => {
             password: values.password,
             redirect: false
         })
-        setLoginAlerts(res)
         if (res.ok) {
             router.push('/')
             router.refresh()
         }
+        setLoginAlerts(res)
     }
 
     return (

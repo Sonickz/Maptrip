@@ -14,7 +14,7 @@ const Navbar = ({ session }) => {
     const router = useRouter()
 
     const isActive = (path) => {
-        return pathname === path
+        return pathname === path ? true : path !== '/' && pathname.includes(path)
     }
 
     const navbarRoutes = [
@@ -25,6 +25,11 @@ const Navbar = ({ session }) => {
         {
             name: 'Mapa',
             route: '/map'
+        },
+        {
+            name: 'Mis viajes',
+            route: '/travels',
+            auth: true
         }
     ]
 
@@ -33,6 +38,13 @@ const Navbar = ({ session }) => {
             label: 'Perfil',
             icon: 'pi pi-user',
             command: () => { }
+        },
+        {
+            label: 'Mis viajes',
+            icon: 'pi pi-send',
+            command: () => {
+                router.push('/travels')
+            }
         },
         {
             label: 'Cerrar sesión',
@@ -54,19 +66,17 @@ const Navbar = ({ session }) => {
                 </Link>
                 {/* Navbar Links */}
                 <ul className="flex flex-row justify-center w-1/2 gap-6 px-4 py-1 text-lg navbar__links">
-                    {navbarRoutes.map((route, i) => {
-                        return (
-                            <li key={i}>
-                                <Link href={route.route} className={`navbar__link px-6 py-2 transition-all duration-100 ease-linear cursor-pointer rounded-md
-                                    ${isActive(route.route) && 'navbar__link--active'}`}>
-                                    {route.name}
-                                </Link>
-                            </li>
-                        )
+                    {navbarRoutes.map(({ name, route, auth }, i) => {
+                        if (auth && !session) return;
+                            return (
+                                <li key={i}>
+                                    <Link href={route} className={`navbar__link px-6 py-2 transition-all duration-100 ease-linear cursor-pointer rounded-md
+                                    ${isActive(route) && 'navbar__link--active'}`}>
+                                        {name}
+                                    </Link>
+                                </li>
+                            )
                     })}
-                    <li>
-
-                    </li>
                 </ul>
                 {/* User */}
                 {!session && (

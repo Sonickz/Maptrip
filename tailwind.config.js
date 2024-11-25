@@ -4,6 +4,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/primereact/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -12,7 +13,7 @@ module.exports = {
         foreground: "var(--foreground)",
         primary: {
           DEFAULT: "var(--primary-color-500)",
-          hover: "var(--primary-color-600)",
+          hover: "var(--primary-color-700)",
           active: "var(--primary-color-700)",
           border: "var(--primary-color-300)",
           title: "var(--primary-color-700)",

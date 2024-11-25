@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server"
-import prisma from "@/libs/prisma"
+import { NextResponse } from 'next/server'
+import prisma from '@/libs/prisma'
 
 export async function GET() {
 
@@ -7,9 +7,7 @@ export async function GET() {
         const citys = await prisma.citys.findMany()
         return NextResponse.json(citys, { status: 200 })
     } catch (error) {
-        return NextResponse.json({
-            Error: "Error getting citys" + error.message
-        }, { status: 500 })
+        return NextResponse.json({ error: 'Error getting citys' + error.message }, { status: 500 })
     }
 }
 
@@ -20,15 +18,10 @@ export async function POST(req) {
         const newCitys = await prisma.citys.createMany({
             data: data
         })
-        return NextResponse.json({
-            message: "Citys created",
-            data: newCitys
-        }, { status: 200 })
+        return NextResponse.json({ message: 'Citys created', data: newCitys }, { status: 200 })
     }
     catch (error) {
-        return NextResponse.json({
-            Error: "Error creating city" + error.message
-        }, { status: 500 })
+        return NextResponse.json({ error: 'Error creating citys' + error.message }, { status: 500 })
     }
 }
 

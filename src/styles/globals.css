@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@import 'primereact/resources/themes/lara-light-blue/theme.css';
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
 
 /* Creacion de fuente a partir de archivo .ttf */
 @font-face {
@@ -32,6 +41,10 @@ body {
 
 main>* {
   width: 100%;
+}
+
+*:focus-visible {
+  outline: none;
 }
 
 @layer utilities {
@@ -75,10 +88,32 @@ main>* {
   }
 }
 
+/* Ancho del scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+/* Color de fondo de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: var(--primary-color-200);
+}
+
+/* Color y diseño de la barra */
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-400);
+  border-radius: 5px;
+}
+
+/* Hover en la barra */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary-color-500);
+}
+
 
 /* Generals */
 .main {
-  @apply py-24 px-14;
+  @apply w-full py-16 px-14;
 }
 
 .scrollbar {
@@ -90,8 +125,33 @@ main>* {
   @apply px-6 py-3 font-bold text-white no-underline transition-all duration-500 border-none rounded-full cursor-pointer bg-primary hover:font-bold hover:bg-primary-hover;
 }
 
+.p-button {
+  @apply bg-primary text-white py-[0.75rem] px-[1.25rem];
+}
+
+.p-button:not(:disabled):hover {
+  @apply bg-primary-hover;
+}
+
+.p-button:focus {
+  box-shadow: none
+}
+
+.p-button.p-button-icon-only {
+  width: 3rem;
+  padding: 0.75rem 0;
+}
+
 button:focus-visible {
   outline: 1px solid var(--primary-color-400);
+}
+
+.btn.btn-secondary, .btn-secondary {
+  @apply bg-gray-500 hover:bg-gray-700;
+}
+
+.p-divider{
+  @apply before:border-2 before:border-primary-300 m-0;
 }
 
 .font-secondary {

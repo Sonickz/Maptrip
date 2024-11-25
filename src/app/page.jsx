@@ -6,9 +6,9 @@ import './home.css'
 
 export default function HomePage() {
   return (
-    <article className="relative flex flex-col justify-end !px-0 !pb-0 main">
+    <article className="relative flex flex-col justify-end !px-0 !py-0 main">
       {/* View 1 */}
-      <article className="view view-1 flex flex-row justify-end overflow h-[87vh]">
+      <article className="view view-1 flex flex-row justify-end overflow h-[90vh] !pr-0">
         {/* Map */}
         <section className="absolute left-4 w-[37%] hover:w-[40%] transition-full duration-300">
           <MapSvg className="w-full h-full map-svg" />
@@ -67,8 +67,8 @@ export default function HomePage() {
       </article>
       <Divider layout="horizontal" />
       {/* View 3*/}
-      <article className="view view-3 flex flex-row justify-center items-center gap-28">
-        <h1 className="text-5xl text-white font-extrabold text-center capitalize">¿Como funciona <br /> nuestra <br /> pagina web?</h1>
+      <article className="view view-3 flex flex-row justify-center items-center gap-28 !py-16">
+        <h1 className="text-5xl text-white font-extrabold text-center capitalize">¡Empieza <br /> a <br />interactuar!</h1>
         <Divider layout="vertical" className="before:!border-neutral-900 h-[60vh]" />
         <section className="w-[30%]">
           <MapSvg className="w-full h-full map-svg" />

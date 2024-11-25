@@ -4,7 +4,7 @@ import bcrypt from 'bcrypt'
 import { registerValidationSchema } from '@/app/api/schemas/users.schema'
 import { zodValidateAPI } from '@/libs/libs'
 
-export async function POST(req, res) {
+export async function POST(req) {
     const data = await req.json()
     const { username, email, password } = data
 
@@ -19,22 +19,18 @@ export async function POST(req, res) {
                 ]
             }
         })
-        if (findUser.length > 0) return NextResponse.json({ message: ['Ya existe un usuario con estos datos'] }, { status: 400 })
+        if (findUser.length > 0) return NextResponse.json({ message: 'Ya existe un usuario con estos datos' }, { status: 400 })
 
         //Hash password
         const userPassword = await bcrypt.hash(password, 10)
 
         //Create register
         const newUser = await prisma.users.create({
-            data: { ...data, password: userPassword}
+            data: { ...data, password: userPassword }
         })
-
-        return NextResponse.json({
-            message: 'Cuenta creada satisfactoriamente',
-            data: newUser
-        })
+        return NextResponse.json({ message: 'Cuenta creada satisfactoriamente', data: newUser })
     } catch (error) {
-        return NextResponse.json({ message: ['Error al crear el usuario: ' + error.message] }, { status: 500 })
+        return NextResponse.json({ error: 'Error al crear el usuario: ' + error.message }, { status: 500 })
     }
 }
 

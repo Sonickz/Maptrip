@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Camisa",
+        "sizes": "S,M,L",
+        "price": 50000,
+        "img": "shirt.png"
+    },
+    {
+        "id": 2,
+        "name": "Gorra",
+        "sizes": "Ajustable",
+        "price": 30000,
+        "img": "cap.png"
+    },
+    {
+        "id": 3,
+        "name": "Zapatos",
+        "sizes": "36,37,38,39,40",
+        "price": 90000,
+        "img": "shoes.png"
+    }
+]

@@ -4,8 +4,7 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { MapSvg, CloseIcon, DownArrowIcon } from '@/components/svg/SvgComponents'
 import Loading from '@/app/loading'
-import Cookies from 'js-cookie'
-import { cleanMapDataCookies, setMapDataCookie } from '../api/config/routes'
+import { cleanMapDataCookie, setMapDataCookie } from '../api/config/routes'
 
 export default function Map({ citysData }) {
     const router = useRouter()
@@ -25,7 +24,7 @@ export default function Map({ citysData }) {
     //Loading
     useEffect(() => {
         const cleanCookies = async () => {
-            await cleanMapDataCookies()
+            await cleanMapDataCookie()
         }
         cleanCookies()
         const loadingTimer = setTimeout(() => setLoading(false), 500)

@@ -45,12 +45,18 @@ export default function Confirmation({ session, data, transaction }) {
                     timer: 6000,
                     timerProgressBar: true,
                     showConfirmButton: false
+                }).then(() => {
+                    router.push('/map')
+                    router.refresh()
                 }),
                 pending: () => Swal.fire({
                     icon: 'info',
                     title: '¡Tu viaje esta pendiente!',
                     text: 'Aun debes realizar el pago para confirmar tu viaje.',
                     showConfirmButton: false,
+                }).then(() => {
+                    router.push('/map')
+                    router.refresh()
                 }),
                 rejected: () => Swal.fire({
                     icon: 'error',
@@ -59,18 +65,14 @@ export default function Confirmation({ session, data, transaction }) {
                     timer: 6000,
                     timerProgressBar: true,
                     showConfirmButton: false
+                }).then(() => {
+                    setStepperDate(selectedDate)
+                    setActiveStep(3)
+                    const loadingTimer = setTimeout(() => setLoading(false), 2000)
+                    return () => clearTimeout(loadingTimer)
                 }),
             }
-            transactionAlerts[transaction.status]().then(() => {
-                if (transaction.status === 'approved') {
-                    router.refresh()
-                    router.push('/map')
-                }
-                setStepperDate(selectedDate)
-                setActiveStep(3)
-                const loadingTimer = setTimeout(() => setLoading(false), 2000)
-                return () => clearTimeout(loadingTimer)
-            })
+            transactionAlerts[transaction.status]()
         } else {
             const loadingTimer = setTimeout(() => setLoading(false), 2000)
             return () => clearTimeout(loadingTimer)
@@ -344,7 +346,6 @@ export default function Confirmation({ session, data, transaction }) {
         })
 
         const paymentData = {
-            id: userId,
             userName,
             userEmail,
             title: `Viaje a ${cityName} en ${transportName}, ${persons} personas x ${daysCant} dias ${totalProducts > 0 ? `+ ${stepperProducts.length} productos` : ''}.`,

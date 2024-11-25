@@ -71,7 +71,8 @@ model Travels {
   transport      Transports       @relation(fields: [transportId], references: [id])
   transportId    Int
   ProductsOrders ProductsOrders[]
-  paymentId      String @unique 
+  preferenceId   String           @unique
+  paymentId      String           @unique
   price          Int
   createdAt      DateTime         @default(now())
 }

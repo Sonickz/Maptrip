@@ -9,9 +9,9 @@ export async function POST(req) {
     const { data: { id } } = data
 
     try {
-        const payment = await new Payment(mercadopago).get({ id })
+        const payment = await new Payment(mercadopago).get({ id })        
         if (payment.status === 'approved') {
-
+            const preferenceId = payment.metadata.id
             const { travel_data: {
                 user_id,
                 persons,
@@ -20,20 +20,17 @@ export async function POST(req) {
                 city_id,
                 transport_id,
                 price,
-            },
-                products_orders_data } = payment.metadata.data
+            }, products_orders_data } = payment.metadata.data
 
-            //* Save data
-
+            //* Comp travel
             const findTravel = await prisma.travels.findUnique({
                 where: {
                     paymentId: id
                 }
             })
-
             if (findTravel) return NextResponse.json(null, { status: 200 })
-                
-            //Save travel
+
+            //* Save travel
             const newTravel = await prisma.travels.create({
                 data: {
                     userId: user_id,
@@ -42,6 +39,7 @@ export async function POST(req) {
                     dateEnd: date_end,
                     cityId: city_id,
                     transportId: transport_id,
+                    preferenceId: preferenceId,
                     paymentId: id,
                     price
                 }

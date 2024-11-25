@@ -4,19 +4,22 @@ import { petitionError } from '../config/libs'
 import { WEB_URL } from '@/config/config'
 import { cookies } from 'next/headers'
 import { cryp } from '@/libs/libs'
+import { v4 as uuidv4 } from 'uuid'
 
 export const mercadopago = new MercadoPagoConfig({ accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN })
 
 export async function POST(req) {
     const data = await req.json()
-    const { paymentData: { id, userName, userEmail, title, img, price } } = data
+
+    const uniqueId = uuidv4()
+    const { travelData, productsOrdersData, paymentData: { userName, userEmail, title, img, price } } = data
 
     try {
         const preference = await new Preference(mercadopago).create({
             body: {
                 items: [
                     {
-                        id,
+                        id: uniqueId,
                         title,
                         description: 'Pago de viaje en Maptrip',
                         picture_url: `${WEB_URL}/img/citys/${img}`,
@@ -35,7 +38,8 @@ export async function POST(req) {
                     },
                 },
                 metadata: {
-                    data
+                    id: uniqueId,
+                    data: { travelData, productsOrdersData }
                 },
                 back_urls: {
                     success: `${WEB_URL}/map/confirmation`,
@@ -47,7 +51,7 @@ export async function POST(req) {
         })
 
         const cookiesStore = await cookies()
-        const newCookie = cryp.encrypt({ id: preference.id, status: 'pending' })
+        const newCookie = cryp.encrypt({ id: uniqueId, status: 'pending' })
         cookiesStore.set('MAPTRIP-PAYMENT', newCookie, { httpOnly: true, secure: true, maxAge: 60 * 15 })
 
         return NextResponse.json(preference, { status: 200 })

@@ -1,5 +1,5 @@
 import { cookies } from 'next/headers';
-import { ENCRIPT_KEY, WEB_NAME } from '@/config/config'
+import { WEB_NAME } from '@/config/config'
 import Confirmation from './Confirmation';
 import { redirect } from 'next/navigation';
 import { auth } from '@/libs/auth';
@@ -13,13 +13,14 @@ export const metadata = {
 }
 
 export default async function ConfirmationPage({ searchParams }) {
-    const { preference_id, payment_id, status } = await searchParams
+    const { preference_id, status } = await searchParams
 
     //* Cookies
     const cookiesStore = await cookies()
 
     const dataCookie = cookiesStore.get('MAPTRIP-DATA')?.value
     const dataCookieData = cryp.decrypt(dataCookie)
+    if (!dataCookie) return redirect('/map')
 
     const paymentCookie = cookiesStore.get('MAPTRIP-PAYMENT')?.value
     const paymentCookieData = cryp.decrypt(paymentCookie)
@@ -43,11 +44,11 @@ export default async function ConfirmationPage({ searchParams }) {
 
     //* Comprobate transaction
     transactionData = { id: preference_id, status: preference_id && status === 'null' ? 'rejected' : status }
-    if (payment_id && payment_id !== 'null') {
-        const isSamePayment = paymentCookieData.id === preference_id
-        const payment = await new Payment(mercadopago).get({ id: payment_id })
-        if (payment && isSamePayment) transactionData = { id: preference_id, payment_id, data: payment?.metadata?.data, status: payment.status }
-        else transactionData = { id: preference_id, status: 'rejected' }
+    const transactionPreferenceId = paymentCookieData?.id
+    if (preference_id && !transactionPreferenceId) return redirect('/map')
+    if (transactionPreferenceId) {
+        const findTravel = await prisma.travels.findUnique({ where: { preferenceId: transactionPreferenceId } })
+        if (findTravel) transactionData = { id: transactionPreferenceId, status: 'approved' }
     }
 
     return (

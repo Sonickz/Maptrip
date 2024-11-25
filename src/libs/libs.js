@@ -36,19 +36,23 @@ export const cryp = {
             encryptedData += cipher.final('base64')
             return JSON.stringify({ data: encryptedData, ivHex: iv.toString('hex') })
         } catch (error) {
-            return error
+            console.error(error)
         }
     },
 
     decrypt: function (encryptedData) {
-        if (!encryptedData) return null
-        const { data, ivHex } = JSON.parse(encryptedData)
+        try {
+            if (!encryptedData) return null
+            const { data, ivHex } = JSON.parse(encryptedData)
 
-        const iv = Buffer.from(ivHex, 'hex')
-        const decipher = crypto.createDecipheriv('aes-256-cbc', this.key, iv)
-        let decryptedData = decipher.update(data, 'base64', 'utf8')
-        decryptedData += decipher.final('utf8')
+            const iv = Buffer.from(ivHex, 'hex')
+            const decipher = crypto.createDecipheriv('aes-256-cbc', this.key, iv)
+            let decryptedData = decipher.update(data, 'base64', 'utf8')
+            decryptedData += decipher.final('utf8')
 
-        return JSON.parse(decryptedData)
+            return JSON.parse(decryptedData)
+        } catch (error) {
+            console.error(error)
+        }
     }
 }

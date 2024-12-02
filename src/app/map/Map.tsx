@@ -3,20 +3,26 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { MapSvg, CloseIcon, DownArrowIcon } from '@/components/svg/SvgComponents'
-import Loading from '@/app/loading'
 import { cleanMapDataCookie, setMapDataCookie } from '../api/config/routes'
+import { Citys } from '@prisma/client'
+import Loading from '@/app/loading'
+import LoadingComponent from '@/components/LoadingComponent'
 
-export default function Map({ citysData }) {
+interface Props {
+    citysData: Citys[] | []
+}
+
+const Map: React.FC<Props> = ({ citysData }) => {
     const router = useRouter()
     const [loading, setLoading] = useState(true)
     const [confirmLoading, setConfirmLoading] = useState(false)
-    const [hoverCity, setHoverCity] = useState(null)
-    const [actualCity, setActualCity] = useState(citysData[0])
+    const [hoverCity, setHoverCity] = useState<Citys | null>(null)
+    const [actualCity, setActualCity] = useState<Citys>(citysData[0])
     const [hiddenCityBox, setHiddenCityBox] = useState(false)
     const [modal, setModal] = useState(false)
     const [modalTransition, setModalTransition] = useState(false)
-    const mapRef = useRef(null)
-    const modalContentRef = useRef(null)
+    const mapRef = useRef<SVGElement>(null)
+    const modalContentRef = useRef<HTMLElement>(null)
 
 
     //* Effects
@@ -32,14 +38,14 @@ export default function Map({ citysData }) {
     }, [])
 
     //Hide city box
-    const timerRef = useRef(null)
+    const timerRef = useRef<NodeJS.Timeout | null>(null)
     useEffect(() => {
         setHiddenCityBox(false)
         if (modal && !hoverCity) {
             if (timerRef.current) clearTimeout(timerRef.current)
             timerRef.current = setTimeout(() => setHiddenCityBox(true), 10000)
         }
-        return () => clearTimeout(timerRef.current)
+        return () => timerRef.current ? clearTimeout(timerRef.current) : undefined
     }, [hoverCity, modal])
 
 
@@ -47,10 +53,12 @@ export default function Map({ citysData }) {
 
     const resetMap = () => {
         const map = mapRef.current
-        const mapPaths = map.querySelectorAll("path")
-        mapPaths.forEach(path => {
-            path.classList.remove("active")
-        })
+        if (map) {
+            const mapPaths = map.querySelectorAll("path")
+            mapPaths.forEach(path => {
+                path.classList.remove("active")
+            })
+        }
     }
 
     const closeModal = () => {
@@ -60,31 +68,33 @@ export default function Map({ citysData }) {
     }
 
     //Comprobate if the element is a city
-    const isCity = (e) => {
-        const cityCode = e.target.dataset.id
+    const isCity = (e: React.MouseEvent<HTMLElement>) => {
+        const target = e.currentTarget
+        const cityCode = target.dataset.id
         return cityCode && !cityCode.includes("path") && cityCode.length === 5
     }
 
 
     //* Handlers
 
-    const handleHover = (e) => {
-        const cityCode = e.target.dataset.id
+    const handleHover = (e: React.MouseEvent<HTMLElement>) => {
+        const target = e.currentTarget
+        const cityCode = target.dataset.id
         if (isCity(e)) {
             const findCity = citysData.find(city => city.code === cityCode)
-            setHoverCity(findCity)
+            if (findCity) setHoverCity(findCity)
         }
     }
 
-    const handleClick = (e) => {
+    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
         if (isCity(e)) {
             setModalTransition(true)
             resetMap()
-            const citySelected = e.target
+            const citySelected = e.currentTarget
             citySelected.classList.add("active")
             setTimeout(() => {
-                modalContentRef.current ? modalContentRef.current.scrollTop = 0 : null
-                setActualCity(hoverCity)
+                if (modalContentRef.current) modalContentRef.current.scrollTop = 0
+                if (hoverCity) setActualCity(hoverCity)
                 setModal(true)
             }, 400)
             const time = modal ? 750 : 0
@@ -98,8 +108,10 @@ export default function Map({ citysData }) {
         const modalContent = modalContentRef.current
         if (modalContent) {
             const arrow = modalContent.querySelector(".arrow")
-            modalContent.scrollTop >= 230 && arrow.classList.add("animate__fadeOutDown")
-            modalContent.scrollTop <= 30 && arrow.classList.remove("animate__fadeOutDown")
+            if (arrow) {
+                modalContent.scrollTop >= 230 && arrow.classList.add("animate__fadeOutDown")
+                modalContent.scrollTop <= 30 && arrow.classList.remove("animate__fadeOutDown")
+            }
         }
     }
 
@@ -170,9 +182,11 @@ export default function Map({ citysData }) {
                 </section>
                 {/* Footer */}
                 <footer className='sticky bottom-0 flex flex-row align-center justify-end'>
-                    <button type="button" className="btn" onClick={handleContinue}>{confirmLoading ? <Loading version={2} /> : 'Continuar'}</button>
+                    <button type="button" className="btn" onClick={handleContinue}>{confirmLoading ? <LoadingComponent /> : 'Continuar'}</button>
                 </footer>
             </article>
         </article>
     )
 }
+
+export default Map

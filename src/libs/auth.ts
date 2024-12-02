@@ -1,11 +1,12 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { getServerSession } from 'next-auth'
+import { getServerSession, NextAuthOptions, Session } from 'next-auth'
 import { zodValidateNextAuth } from '@/libs/libs'
 import { loginValidationSchema } from '@/app/api/schemas/users.schema'
+import { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '@/libs/prisma'
 import bcrypt from 'bcrypt'
 
-export const config = {
+export const config: NextAuthOptions = {
     session: {
         strategy: "jwt"
     },
@@ -17,12 +18,12 @@ export const config = {
                 password: { label: "Password", type: "password" }
             },
             async authorize(credentials) {
-                const data = credentials
-                const { email, password } = data
+                if (!credentials) throw new Error('Credenciales no proporcionadas')
+                const { email, password } = credentials
 
                 //Validate data
                 const validate = zodValidateNextAuth(loginValidationSchema, { email, password })
-                if (!validate.success) throw new Error(validate.errors)
+                if (!validate.success) throw new Error(validate.errors?.join(', '))
 
                 //Find user
                 const findUser = await prisma.users.findUnique({
@@ -37,7 +38,7 @@ export const config = {
                 if (!passwordMatch) throw new Error('La contraseña es incorrecta')
 
                 return {
-                    id: findUser.id,
+                    id: findUser.id.toString(),
                     name: findUser.username,
                     email: findUser.email
                 }
@@ -64,6 +65,18 @@ export const config = {
     }
 }
 
-export function auth(req, res) {
+export function auth(req?: NextApiRequest, res?: NextApiResponse) {
     return req && res ? getServerSession(req, res, config) : getServerSession(config)
 }
+
+declare module 'next-auth' {
+    interface Session {
+        user?: {
+            id?: number,
+            name?: string | null,
+            email?: string | null,
+            image?: string | null
+        }
+    }
+}
+export type NextAuthSession = Session | null

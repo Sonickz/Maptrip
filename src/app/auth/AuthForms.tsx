@@ -4,9 +4,13 @@ import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
 import { useRouter } from 'next/navigation'
 import Loading from '../loading'
+import { NextAuthSession } from '@/libs/auth'
 
+interface Props {
+    session: NextAuthSession
+}
 
-export default function AuthForms({ session }) {
+const AuthForms: React.FC<Props> = ({ session }) => {
     const router = useRouter()
     const [actualForm, setActualForm] = useState('login') // Login = 1 - Register = 2
     const [loading, setLoading] = useState(true)
@@ -16,7 +20,7 @@ export default function AuthForms({ session }) {
         setLoading(false)
     }, [session])
 
-    const switchForm = (resetForm) => {
+    const switchForm = (resetForm: Function) => {
         setActualForm(actualForm === 'login' ? 'register' : 'login')
         if (resetForm) resetForm()
     }
@@ -29,3 +33,5 @@ export default function AuthForms({ session }) {
         </section >
     )
 }
+
+export default AuthForms

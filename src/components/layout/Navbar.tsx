@@ -3,17 +3,23 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { UserIcon } from '@/components/svg/SvgComponents'
 import { WEB_NAME } from '@/config/config'
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import { TieredMenu } from 'primereact/tieredmenu'
 import { signOut } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import { NextAuthSession } from '@/libs/auth'
 
-const Navbar = ({ session }) => {
+
+interface Props {
+    session: NextAuthSession
+}
+
+const Navbar: React.FC<Props> = ({ session }) => {
     const pathname = usePathname()
-    const userMenu = useRef(null)
+    const userMenu = useRef<TieredMenu>(null)
     const router = useRouter()
 
-    const isActive = (path) => {
+    const isActive = (path: string) => {
         return pathname === path ? true : path !== '/' && pathname.includes(path)
     }
 
@@ -68,14 +74,14 @@ const Navbar = ({ session }) => {
                 <ul className="flex flex-row justify-center w-1/2 gap-6 px-4 py-1 text-lg navbar__links">
                     {navbarRoutes.map(({ name, route, auth }, i) => {
                         if (auth && !session) return;
-                            return (
-                                <li key={i}>
-                                    <Link href={route} className={`navbar__link px-6 py-2 transition-all duration-100 ease-linear cursor-pointer rounded-md
+                        return (
+                            <li key={i}>
+                                <Link href={route} className={`navbar__link px-6 py-2 transition-all duration-100 ease-linear cursor-pointer rounded-md
                                     ${isActive(route) && 'navbar__link--active'}`}>
-                                        {name}
-                                    </Link>
-                                </li>
-                            )
+                                    {name}
+                                </Link>
+                            </li>
+                        )
                     })}
                 </ul>
                 {/* User */}
@@ -86,14 +92,14 @@ const Navbar = ({ session }) => {
                             Login
                         </span>
                     </Link>
-                ) || (
-                        <section className={`navbar__user ${session && ('navbar__user--active')}`}
+                ) || session && (
+                        <section className={"navbar__user navbar__user--active"}
                             title='Click para desplegar el menu'
-                            onClick={(e) => userMenu.current.toggle(e)}
+                            onClick={(e) => userMenu.current?.toggle(e)}
                         >
                             <UserIcon className="navbar__user-icon" />
                             <span className="navbar__user-login session">
-                                {session.user.name}
+                                {session?.user?.name}
                             </span>
                             <TieredMenu
                                 className='!right-0'

@@ -1,18 +1,19 @@
 import { NextResponse } from 'next/server'
 import prisma from '@/libs/prisma'
+import { NextApiRequest } from 'next'
 
 export async function GET() {
 
     try {
         const citys = await prisma.citys.findMany()
         return NextResponse.json(citys, { status: 200 })
-    } catch (error) {
+    } catch (error: any) {
         return NextResponse.json({ error: 'Error getting citys' + error.message }, { status: 500 })
     }
 }
 
-export async function POST(req) {
-    const data = await req.json()
+export async function POST(req: NextApiRequest) {
+    const { body: data } = req
 
     try {
         const newCitys = await prisma.citys.createMany({
@@ -20,7 +21,7 @@ export async function POST(req) {
         })
         return NextResponse.json({ message: 'Citys created', data: newCitys }, { status: 200 })
     }
-    catch (error) {
+    catch (error: any) {
         return NextResponse.json({ error: 'Error creating citys' + error.message }, { status: 500 })
     }
 }

@@ -3,9 +3,10 @@ import prisma from '@/libs/prisma'
 import bcrypt from 'bcrypt'
 import { registerValidationSchema } from '@/app/api/schemas/users.schema'
 import { zodValidateAPI } from '@/libs/libs'
+import { NextApiRequest } from 'next'
 
-export async function POST(req) {
-    const data = await req.json()
+export async function POST(req: NextApiRequest) {
+    const { body: data } = req
     const { username, email, password } = data
 
     try {
@@ -29,7 +30,7 @@ export async function POST(req) {
             data: { ...data, password: userPassword }
         })
         return NextResponse.json({ message: 'Cuenta creada satisfactoriamente', data: newUser })
-    } catch (error) {
+    } catch (error: any) {
         return NextResponse.json({ error: 'Error al crear el usuario: ' + error.message }, { status: 500 })
     }
 }

@@ -1,12 +1,37 @@
 'use client'
-import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import { zodValidate } from '@/libs/libs'
-import FormAlert from './FormAlert'
-import Loading from '@/app/loading'
+import { FormAlertsProps, FormAlert } from './FormAlert'
+import LoadingComponent from './LoadingComponent'
+import { ReactNode } from 'react'
+import { ZodSchema } from 'zod'
 
-const FormComponent = ({ children, fields, schemaValidate, onSubmit, title, buttonText, className, alerts, renderChildren, renderHeader }) => {
+interface Props<FormValues> {
+    children?: ReactNode,
+    fields: Array<{
+        field: string,
+        type: string,
+        options?: Array<{
+            label: string,
+            value: string
+        }>,
+        label: string,
+        value?: string,
+        onInput?: (e: React.ChangeEvent<HTMLInputElement>) => void
+    }>,
+    schemaValidate: ZodSchema,
+    onSubmit: (values: any, FormikHelpers: FormikHelpers<Record<string, string>>) => void,
+    alerts: FormAlertsProps,
+    renderHeader?: ReactNode,
+    renderChildren?: React.FC,
+    title: string,
+    buttonText?: string | undefined,
+    className?: string | undefined
+}
 
-    const initialValues = fields.reduce((acc, field) => {
+const FormComponent = <FormValues,>({ children, fields, schemaValidate, onSubmit, title, buttonText, className, alerts, renderChildren, renderHeader }: Props<FormValues>) => {
+
+    const initialValues = fields.reduce((acc: { [key: string]: string }, field) => {
         acc[field.field] = field.value ? field.value : ''
         return acc
     }, {})
@@ -22,7 +47,7 @@ const FormComponent = ({ children, fields, schemaValidate, onSubmit, title, butt
                         <Form>
                             <header className='form__header'>
                                 <h1 className="form__title">{title}</h1>
-                                {renderHeader && renderHeader}
+                                {renderHeader}
                             </header>
                             <section className="form__inputs">
                                 <FormAlert alerts={alerts} />
@@ -33,7 +58,7 @@ const FormComponent = ({ children, fields, schemaValidate, onSubmit, title, butt
                                                 <div className="form__select">
                                                     <Field name={field.field} as="select">
                                                         <option value="">Selecciona tu {field.label.toLowerCase()}</option>
-                                                        {field.options.map((option, i) => {
+                                                        {field.options && field?.options.map((option, i) => {
                                                             return <option key={i} value={option.value}>{option.label}</option>
                                                         })}
                                                     </Field>
@@ -51,9 +76,9 @@ const FormComponent = ({ children, fields, schemaValidate, onSubmit, title, butt
                                 })}
                             </section>
                             <footer className="form__footer">
-                                <button type="submit" className="form__submit">{isSubmitting ? <Loading version={2}/> : buttonText ? buttonText : title}</button>
+                                <button type="submit" className="form__submit">{isSubmitting ? <LoadingComponent /> : buttonText ? buttonText : title}</button>
                             </footer>
-                            {renderChildren(resetForm)}
+                            {renderChildren ? renderChildren(resetForm) : null}
                             {children}
                         </Form>
                     )

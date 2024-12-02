@@ -1,15 +1,16 @@
 import { NextResponse } from 'next/server'
 import { MercadoPagoConfig, Preference } from 'mercadopago'
 import { petitionError } from '../config/libs'
-import { WEB_URL } from '@/config/config'
+import { MERCADOPAGO_ACCESS_TOKEN, WEB_URL } from '@/config/config'
 import { cookies } from 'next/headers'
 import { cryp } from '@/libs/libs'
 import { v4 as uuidv4 } from 'uuid'
+import { NextApiRequest } from 'next'
 
-export const mercadopago = new MercadoPagoConfig({ accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN })
+export const mercadopago = new MercadoPagoConfig({ accessToken: MERCADOPAGO_ACCESS_TOKEN as string })
 
-export async function POST(req) {
-    const data = await req.json()
+export async function POST(req: NextApiRequest) {
+    const { body: data } = req
 
     const uniqueId = uuidv4()
     const { travelData, productsOrdersData, paymentData: { userName, userEmail, title, img, price } } = data

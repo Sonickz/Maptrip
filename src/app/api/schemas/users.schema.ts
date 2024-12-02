@@ -11,8 +11,8 @@ export const registerValidationSchema = z.object({
     age: z
         .number({ invalid_type_error: 'Este campo es obligatorio' })
         .min(1, { message: 'Este campo es obligatorio' })
-        .refine((value) => value >= 18, { message: 'Debes ser mayor de edad' },
-            (value) => value < 122, { message: 'La edad no es valida' }),
+        .refine((value) => value >= 18, { message: 'Debes ser mayor de edad' })
+        .refine((value) => value < 122, { message: 'La edad no es valida' }),
     email: z
         .string({ required_error: 'Este campo es obligatorio' })
         .email({ message: 'Ingrese un correo electronico valido' }),

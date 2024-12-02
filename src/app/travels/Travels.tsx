@@ -3,12 +3,22 @@ import { DataTable } from 'primereact/datatable'
 import { Column } from 'primereact/column'
 import { Button } from 'primereact/button'
 import { useRouter } from 'next/navigation'
+import { Travels as TravelsType, Citys, Transports, ProductsOrders } from '@prisma/client'
 
+interface TravelsModel extends TravelsType {
+    city: Citys,
+    transport: Transports,
+    ProductsOrders: ProductsOrders[] | []
+}
 
-const Travels = ({ userTravels }) => {
+interface Props {
+    userTravels: TravelsModel[] | []
+}
+
+const Travels: React.FC<Props> = ({ userTravels }) => {
     const router = useRouter()
-    console.log(userTravels)
     const formatUserTravels = userTravels.map((travel) => {
+
         return {
             ...travel,
             dateStart: new Date(travel.dateStart).toLocaleDateString('es-CO'),
@@ -41,8 +51,8 @@ const Travels = ({ userTravels }) => {
             ) : (
                 <section className="flex flex-col items-center gap-4">
                     <h1 className="text-xl text-primary-800 font-bold">Aun no tienes viajes</h1>
-                    <Button label="Crear viaje" icon="pi pi-map" tooltip="¡Empieza a planear tu viaje y disfruta de las mejores experiencias!" 
-                    onClick={() => router.push('/map')}/>
+                    <Button label="Crear viaje" icon="pi pi-map" tooltip="¡Empieza a planear tu viaje y disfruta de las mejores experiencias!"
+                        onClick={() => router.push('/map')} />
                 </section>
             )}
         </article>

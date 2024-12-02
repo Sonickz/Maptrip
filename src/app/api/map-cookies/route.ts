@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { petitionError } from '../config/libs'
 import { cookies } from 'next/headers'
 import { cryp } from '@/libs/libs'
+import { NextApiRequest } from 'next'
 
 export async function GET() {
     try {
@@ -14,12 +15,14 @@ export async function GET() {
     }
 }
 
-export async function POST(req) {
-    const data = await req.json()
+export async function POST(req: NextApiRequest) {
+    const { body: data } = req
 
     try {
         const cookieStore = await cookies()
         const oldCookie = cookieStore.get('MAPTRIP-DATA')?.value
+        if (!oldCookie) return NextResponse.json({ message: 'Cookie no exist' }, { status: 400 })
+
         const oldCookieData = cryp.decrypt(oldCookie)
         const encriptedData = cryp.encrypt({ ...oldCookieData, ...data })
         cookieStore.set('MAPTRIP-DATA', encriptedData, { httpOnly: true, secure: true })

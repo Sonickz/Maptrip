@@ -3,10 +3,15 @@ import { registerUser } from '@/app/api/config/routes'
 import { registerValidationSchema } from '@/app/api/schemas/users.schema'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
+import { FormAlertsProps } from '@/components/FormAlert'
 
+interface Props {
+    actualForm: string,
+    switchForm: Function
+}
 
-const RegisterForm = ({ actualForm, switchForm }) => {
-    const [registerAlerts, setRegisterAlerts] = useState(null)
+const RegisterForm: React.FC<Props> = ({ actualForm, switchForm }) => {
+    const [registerAlerts, setRegisterAlerts] = useState<FormAlertsProps>(null)
 
     const registerFields = [
         {
@@ -24,10 +29,10 @@ const RegisterForm = ({ actualForm, switchForm }) => {
             field: 'age',
             type: 'number',
             label: 'Edad',
-            onInput: (e) => {
+            onInput: (e: React.ChangeEvent<HTMLInputElement>) => {
                 const value = e.target.value
                 e.target.value = value.replace(/[^0-9]/g, '')
-                if (value >= 122) e.target.value = 122
+                if (parseInt(value) >= 122) e.target.value = "122"
             },
         },
         {
@@ -47,7 +52,7 @@ const RegisterForm = ({ actualForm, switchForm }) => {
         }
     ]
 
-    const registerSubmit = async (values, { resetForm }) => {
+    const registerSubmit = async (values: Record<string, unknown>, { resetForm }: { resetForm: Function }) => {
         const { confirmPassword, ...data } = values
         try {
             const res = await registerUser(data)
@@ -67,8 +72,8 @@ const RegisterForm = ({ actualForm, switchForm }) => {
                     title: '!mb-0'
                 }
             })
-        } catch (error) {
-            setRegisterAlerts(error)
+        } catch (error: any) {
+            setRegisterAlerts({ error: error.message, status: 400 })
         }
     }
 

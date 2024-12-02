@@ -1,35 +1,38 @@
 import { NextResponse } from 'next/server'
 import crypto from 'crypto'
-import { ENCRIPT_KEY, NEXTAUTH_SECRET } from '@/config/config'
+import { ENCRIPT_KEY } from '@/config/config'
+import { ZodSchema } from 'zod'
 
-export const zodValidate = (schema) => (values) => {
+export const zodValidate = (schema: ZodSchema) => (values: Record<string, unknown>): {} | Record<string, string> => {
     const result = schema.safeParse(values)
-    if (result.success) return
-    const errors = {}
+    if (result.success) return {}
+    const errors: Record<string, string> = {}
     result.error.issues.forEach(({ path, message }) => {
         errors[path[0]] = message
     })
     return errors
 }
 
-export function zodValidateAPI(schema, data, nextAuth) {
+export function zodValidateAPI(schema: ZodSchema, data: Record<string, unknown>): {} | NextResponse {
     const result = schema.safeParse(data)
-    if (!result.success) return NextResponse.json({ message: result.error.issues.map(({ message }) => message) }, { status: 400 })
+    if (result.success) return {}
+    return NextResponse.json({ message: result.error.issues.map(({ message }) => message) }, { status: 400 })
 }
 
-export function zodValidateNextAuth(schema, data) {
+export function zodValidateNextAuth(schema: ZodSchema, data: Record<string, unknown>): { success: boolean, errors?: string[] } {
     const result = schema.safeParse(data)
     if (!result.success) return { success: false, errors: result.error.issues.map(({ message }) => message) }
     return { success: true }
 }
 
 export const cryp = {
-    key: ENCRIPT_KEY,
+    key: ENCRIPT_KEY as string,
 
-    encrypt: function (data) {
+    encrypt: function (data: object): string {
         try {
             const dataString = JSON.stringify(data)
             const iv = crypto.randomBytes(16)
+            if (!this.key) throw new Error('Encryption key is not defined')
 
             const cipher = crypto.createCipheriv('aes-256-cbc', this.key, iv)
             let encryptedData = cipher.update(dataString, 'utf8', 'base64')
@@ -37,13 +40,15 @@ export const cryp = {
             return JSON.stringify({ data: encryptedData, ivHex: iv.toString('hex') })
         } catch (error) {
             console.error(error)
+            throw new Error('Encryption failed')
         }
     },
 
-    decrypt: function (encryptedData) {
+    decrypt: function<T> (encryptedData: string): T {
         try {
-            if (!encryptedData) return null
+            if (!encryptedData) throw new Error('Encrypted data is not defined')
             const { data, ivHex } = JSON.parse(encryptedData)
+            if (!this.key) throw new Error('Encryption key is not defined')
 
             const iv = Buffer.from(ivHex, 'hex')
             const decipher = crypto.createDecipheriv('aes-256-cbc', this.key, iv)
@@ -53,6 +58,7 @@ export const cryp = {
             return JSON.parse(decryptedData)
         } catch (error) {
             console.error(error)
+            throw new Error('Decryption failed')
         }
     }
 }

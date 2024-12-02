@@ -1,6 +1,7 @@
 import prisma from '@/libs/prisma'
 import { NextResponse } from 'next/server'
 import { petitionError } from '../config/libs'
+import { NextApiRequest } from 'next'
 
 export const GET = async () => {
     try {
@@ -11,8 +12,8 @@ export const GET = async () => {
     }
 }
 
-export const POST = async (req) => {
-    const data = await req.json()
+export const POST = async (req: NextApiRequest) => {
+    const { body: data } = req
     try {
         const newTransports = await prisma.transports.createMany({
             data: data

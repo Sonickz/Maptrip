@@ -3,10 +3,16 @@ import { loginValidationSchema } from '@/app/api/schemas/users.schema'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
+import { FormAlertsProps } from '@/components/FormAlert'
 
-const LoginForm = ({ actualForm, switchForm }) => {
+interface Props {
+    actualForm: string,
+    switchForm: Function
+}
+
+const LoginForm: React.FC<Props> = ({ actualForm, switchForm }) => {
     const router = useRouter()
-    const [loginAlerts, setLoginAlerts] = useState(null)
+    const [loginAlerts, setLoginAlerts] = useState<FormAlertsProps>(null)
 
     const loginFields = [
         {
@@ -21,17 +27,18 @@ const LoginForm = ({ actualForm, switchForm }) => {
         }
     ]
 
-    const loginSubmit = async (values) => {
+    const loginSubmit = async (values: Record<string, unknown>) => {
         const res = await signIn('credentials', {
             email: values.email,
             password: values.password,
             redirect: false
         })
-        if (res.ok) {
+        if (res?.ok) {
             router.push('/')
-            router.refresh()
+            return router.refresh()
         }
-        setLoginAlerts(res)
+
+        if (res?.error) setLoginAlerts({ error: res?.error, status: res.status })
     }
 
     return (
